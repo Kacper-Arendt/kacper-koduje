@@ -5,19 +5,31 @@ const Navigation = styled.nav`
   position: sticky;
   top: 0;
   width: 100vw;
-  font-size: 2.5rem;
   padding: 1rem;
+  background: grey;
+  text-align: center;
+  font-size: 2.5rem;
   color: lightgrey;
 `
-
+const StyledLink = styled(Link)`
+  padding: 1rem;
+  margin: 0 .5rem;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  
+  :hover {
+    transform: scaleX(2.1);
+    color: orange;
+  }
+`
 export const Nav = () => {
     return (
         <Navigation>
-            <Link to='header' smooth={true} delay={500}>Początek</Link>
-            <Link to='aboutMe' smooth={true} delay={500}>O mnie</Link>
-            <Link to='skills' smooth={true} delay={500}>Umiejętności</Link>
-            <Link to='projects' smooth={true} delay={500}>Projekty</Link>
-            <Link to='contact' smooth={true} delay={500}>Kontakt</Link>
+            <StyledLink to='header' smooth={true} delay={500}>Początek</StyledLink>
+            <StyledLink to='aboutMe' smooth={true} delay={500}>O mnie</StyledLink>
+            <StyledLink to='skills' smooth={true} delay={500}>Umiejętności</StyledLink>
+            <StyledLink to='projects' smooth={true} delay={500}>Projekty</StyledLink>
+            <StyledLink to='contact' smooth={true} delay={500}>Kontakt</StyledLink>
         </Navigation>
     )
 }
