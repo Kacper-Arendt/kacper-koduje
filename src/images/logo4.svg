@@ -1,0 +1,10 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <text fill="#016128" stroke="#000" stroke-width="0" x="390.20408" y="262.23268" id="svg_2" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve">K</text>
+  <text fill="#e0ba22" stroke="#000" stroke-width="0" x="390.46049" y="281.57606" id="svg_3" font-size="24" font-family="Noto Sans JP" text-anchor="start" xml:space="preserve" transform="rotate(-180 399.228 273.426)">K</text>
+  <path fill="none" d="m374.99999,263.74658l24.79589,-31.53058l24.79589,31.53058l-24.79589,31.53058l-24.79589,-31.53058z" id="svg_28" stroke-width="2" stroke="#000"/>
+  <line fill="none" stroke-width="2" x1="375.91769" y1="263.87708" x2="424.08091" y2="263.87708" id="svg_32" stroke="#000"/>
+ </g>
+
+</svg>
