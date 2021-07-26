@@ -7,7 +7,7 @@ const Div = styled.div`
 
 export const Projects = () => {
     return (
-        <Div>
+        <Div id='projects'>
             Projects
         </Div>
     )

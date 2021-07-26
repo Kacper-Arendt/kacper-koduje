@@ -7,7 +7,7 @@ grid-column: start / end;
 
 export const Skills = () => {
     return(
-        <Div>
+        <Div id='skills'>
             Skills
         </Div>
     )
