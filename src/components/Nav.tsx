@@ -1,15 +1,41 @@
 import styled from 'styled-components';
+import {Link} from 'react-scroll';
 
 const Navigation = styled.nav`
-  grid-column: start / end;
-  grid-row: 1 / 2;
-  background-color: red;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  padding: 1rem;
+  background: grey;
+  text-align: center;
+  font-size: 2.5rem;
+  color: lightgrey;
 `
+const StyledLink = styled(Link).attrs(() => ({
+    activeClass: 'active'
+}))`
+  padding: 1rem;
+  margin: 0 .5rem;
+  cursor: pointer;
+  transition: all .3s;
 
+  :hover{
+    color: rebeccapurple;
+  }
+
+  &.active {
+    color: mediumvioletred;
+  }
+`
 export const Nav = () => {
+
     return (
         <Navigation>
-            Nav
+            <StyledLink to='header' smooth='easeOutCubic' spy={true} delay={500}>Początek</StyledLink>
+            <StyledLink to='aboutMe' smooth='easeOutCubic' spy={true} delay={500}>O mnie</StyledLink>
+            <StyledLink to='skills' smooth='easeOutCubic' spy={true} delay={500}>Umiejętności</StyledLink>
+            <StyledLink to='projects' smooth='easeOutCubic' spy={true} delay={500}>Projekty</StyledLink>
+            <StyledLink to='contact' smooth='easeOutCubic' spy={true} delay={500}>Kontakt</StyledLink>
         </Navigation>
     )
 }
