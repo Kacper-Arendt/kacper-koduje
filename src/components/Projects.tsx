@@ -4,8 +4,7 @@ const Div = styled.div`
   grid-column: center-start / center-end;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   padding: 2rem;
   background-color: rgba(0, 0, 0, .2);
 
@@ -14,14 +13,44 @@ const Div = styled.div`
   box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;`
 
 const ProjectContainer = styled.div`
-  height: 30rem;
-  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  padding: 2rem;
   margin: 1rem;
   background-color: orange;
 
   h3 {
+    margin: 1rem;
     font-size: 2rem;
     text-align: center;
+  }
+
+  p {
+    font-size: 1.2rem;
+    letter-spacing: 1.7px;
+    line-height: 1.5;
+  }
+`
+
+const Button = styled.button`
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+  background: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+  border: 1px solid black;
+  
+  :hover {
+    -webkit-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
+    letter-spacing: 2px;
+    border-radius: 10rem;
   }
 `
 export const Projects = () => {
@@ -34,6 +63,7 @@ export const Projects = () => {
                     Redux, StyledComponents. Do stworzenia bazy danych oraz autoryzacji użytkowników użyłem platformy
                     Firebase.
                 </p>
+                <Button>Zobacz Więcej</Button>
             </ProjectContainer>
             <ProjectContainer>
                 <h3>Weather State</h3>
@@ -43,14 +73,16 @@ export const Projects = () => {
                     pobierane są z serwisu OpenWeatherMap. Do napisania Weather State użyłem TypeScript, React, Redux i
                     StyledComponents.
                 </p>
+                <Button>Zobacz Więcej</Button>
             </ProjectContainer>
             <ProjectContainer>
                 <h3>TodoApp</h3>
                 <p>
                     TodoApp to bardzo prosta aplikacja, która służy do tworzenia list z zadaniami. Był to pierwszy
-                    projekt,
-                    który napisałem w TypeScripcie. TodoApp powstała przy pomocy React`a, Redux`a i StyledComponent`s.
+                    projekt, który napisałem w TypeScripcie. TodoApp powstała przy pomocy React`a, Redux`a i
+                    StyledComponent`s.
                 </p>
+                <Button>Zobacz Więcej</Button>
             </ProjectContainer>
             <ProjectContainer>
                 <h3>Orlik</h3>
@@ -59,6 +91,7 @@ export const Projects = () => {
                     aplikacji poznawałem świat backend`u pisząc w języku PHP. W moim repozytorium można znaleźć kod
                     pisany w JS oraz PHP. Jest to mój pierwszy samodzielny projekt.
                 </p>
+                <Button>Zobacz Więcej</Button>
             </ProjectContainer>
         </Div>
     )
