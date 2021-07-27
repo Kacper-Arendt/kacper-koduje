@@ -28,11 +28,13 @@ const GlobalStyles = createGlobalStyle`
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: repeat(5, 95vh) 8rem;
+  grid-template-rows: repeat(5, min-content) 8rem;
   grid-template-columns: 
           [start] minmax(6rem, 1fr) 
-          [center-start] repeat(4, [col-start] minmax(min-content, 14rem) [col-end])
+          [center-start] repeat(6, [col-start] minmax(min-content, 20rem) [col-end]) [ center-end ]
           minmax(6rem, 1fr)[end];
+  
+  grid-gap: 20rem 0;
 `
 
 export function App() {
