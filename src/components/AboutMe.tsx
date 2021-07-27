@@ -31,7 +31,7 @@ export const AboutMe = () => {
     return (
         <Div id='aboutMe'>
             <p>
-                Jestem Kacper i mam 25 lat jestem żołnierzem oraz studentem trzeciego roku studiów inżynierskich -
+                Mam 25 lat jestem żołnierzem oraz studentem trzeciego roku studiów inżynierskich -
                 kierunek Logistyka. Programowaniem zajmuję się od roku. Przy pomocy wielu kursów internetowych solidnie
                 przepracowałem podstawowe zagadnienia JavaScript/TypeScript. Swoją przygodę z programowaniem zacząłem od
                 nauki HTML/CSS3 oraz PHP i MYSQL.
