@@ -25,17 +25,36 @@ const rotate = keyframes`
 
 const StyledHeader = styled.div`
   grid-column: start / end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+`
+const H1 = styled.h1`
+    font-size: 8rem;
+    color: white;
+
+  :first-of-type {
+    margin-top: 5rem;
+
+    :first-letter {
+      color: #016128;
+    }
+  }
+
+  :last-of-type {
+    :first-letter {
+      color: #e0ba22;
+    }
+  }
 `
 
 const LogoContainer = styled.div`
   width: 30rem;
   height: 30rem;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: sticky;
   box-shadow: 0 20px 35px rgba(0, 0, 0, .3);
   border-radius: .5rem;
   animation: ${showLogo} ease-out 2s;
@@ -73,8 +92,9 @@ const LogoContainer = styled.div`
 export const Header = () => {
     return (
         <StyledHeader id='header'>
-            <LogoContainer>
-            </LogoContainer>
+            <LogoContainer/>
+            <H1>Kacper</H1>
+            <H1>Koduje</H1>
         </StyledHeader>
     )
 }

@@ -10,6 +10,7 @@ const Navigation = styled.nav`
   text-align: center;
   font-size: 2.5rem;
   color: lightgrey;
+  z-index: 1000;
 `
 const StyledLink = styled(Link).attrs(() => ({
     activeClass: 'active'
