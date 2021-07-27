@@ -11,25 +11,31 @@ const Navigation = styled.nav`
   font-size: 2.5rem;
   color: lightgrey;
 `
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link).attrs(() => ({
+    activeClass: 'active'
+}))`
   padding: 1rem;
   margin: 0 .5rem;
-  transition: all .3s ease-in-out;
   cursor: pointer;
-  
-  :hover {
-    transform: scaleX(2.1);
-    color: orange;
+  transition: all .3s;
+
+  :hover{
+    color: rebeccapurple;
+  }
+
+  &.active {
+    color: mediumvioletred;
   }
 `
 export const Nav = () => {
+
     return (
         <Navigation>
-            <StyledLink to='header' smooth={true} delay={500}>Początek</StyledLink>
-            <StyledLink to='aboutMe' smooth={true} delay={500}>O mnie</StyledLink>
-            <StyledLink to='skills' smooth={true} delay={500}>Umiejętności</StyledLink>
-            <StyledLink to='projects' smooth={true} delay={500}>Projekty</StyledLink>
-            <StyledLink to='contact' smooth={true} delay={500}>Kontakt</StyledLink>
+            <StyledLink to='header' smooth='easeOutCubic' spy={true} delay={500}>Początek</StyledLink>
+            <StyledLink to='aboutMe' smooth='easeOutCubic' spy={true} delay={500}>O mnie</StyledLink>
+            <StyledLink to='skills' smooth='easeOutCubic' spy={true} delay={500}>Umiejętności</StyledLink>
+            <StyledLink to='projects' smooth='easeOutCubic' spy={true} delay={500}>Projekty</StyledLink>
+            <StyledLink to='contact' smooth='easeOutCubic' spy={true} delay={500}>Kontakt</StyledLink>
         </Navigation>
     )
 }
