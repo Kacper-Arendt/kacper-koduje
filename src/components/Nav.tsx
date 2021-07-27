@@ -18,7 +18,7 @@ const StyledLink = styled(Link).attrs(() => ({
   margin: 0 .5rem;
   cursor: pointer;
   transition: all .3s;
-
+  
   :hover{
     color: rebeccapurple;
   }
