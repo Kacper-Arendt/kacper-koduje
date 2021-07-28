@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import icons from '../images/iconsCollection.svg';
+import {icons} from '../images/Images';
 
 const Div = styled.div`
   grid-column: center-start / center-end;
