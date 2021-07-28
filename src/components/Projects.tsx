@@ -10,29 +10,57 @@ const Div = styled.div`
 
   border: .4rem solid black;
   border-radius: 5rem;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;`
+  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+  perspective: 300rem;
+  -moz-perspective: 300rem;
+`
 
 const ProjectContainer = styled.div`
+  width: 25%;
+  height: 40rem;
+  transition: transform 1s;
+  position: relative;
+  transform-style: preserve-3d;
+  margin: 1rem;
+
+  :hover {
+    transform: rotateY(-180deg);
+  }
+`
+
+const Side = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background-color: orange;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
-  padding: 2rem;
-  margin: 1rem;
-  background-color: orange;
+`
+
+const Front = styled(Side)`
+  background-color: red;
+`
+const Back = styled(Side)`
+  background-color: green;
+  transform: rotateY(180deg);
 
   h3 {
-    margin: 1rem;
+    margin: 2rem 1rem 1rem;
     font-size: 2rem;
     text-align: center;
   }
 
   p {
-    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
     letter-spacing: 1.7px;
-    line-height: 1.5;
+    line-height: 1.7;
   }
 `
+
 
 const Button = styled.button`
   text-align: center;
@@ -45,7 +73,7 @@ const Button = styled.button`
   cursor: pointer;
   transition: all .2s;
   border: 1px solid black;
-  
+
   :hover {
     -webkit-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
     -moz-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
@@ -53,45 +81,65 @@ const Button = styled.button`
     border-radius: 10rem;
   }
 `
+
 export const Projects = () => {
     return (
         <Div id='projects'>
             <ProjectContainer>
-                <h3>QuizLab</h3>
-                <p>Aplikacja dzięki której można poszerzać swoją wiedzę z zakresu frontend`u. Użytkownik może zagrać
-                    bez konieczności rejestracji. Przy tworzeniu korzystałem z takich technologii jak TypeScript, React,
-                    Redux, StyledComponents. Do stworzenia bazy danych oraz autoryzacji użytkowników użyłem platformy
-                    Firebase.
-                </p>
-                <Button>Zobacz Więcej</Button>
+                <Front className='front'>
+
+                </Front>
+                <Back className='back'>
+                    <h3>QuizLab</h3>
+                    <p>Aplikacja dzięki której można poszerzać swoją wiedzę z zakresu frontend`u. Użytkownik może zagrać
+                        bez konieczności rejestracji. Przy tworzeniu korzystałem z takich technologii jak TypeScript,
+                        React, Redux, StyledComponents. Do stworzenia bazy danych oraz autoryzacji użytkowników użyłem
+                        platformy Firebase.
+                    </p>
+                    <Button>Zobacz</Button>
+                </Back>
             </ProjectContainer>
             <ProjectContainer>
-                <h3>Weather State</h3>
-                <p>
-                    Aplikacja umożliwia sprawdzenie pogody w dowolnym mieście na ziemi. W menu miasta istnieje możliwość
-                    dodania do listy ulubionych. Wszystkie ulubione miasta ładują się automatycznie. Dane pogodowe
-                    pobierane są z serwisu OpenWeatherMap. Do napisania Weather State użyłem TypeScript, React, Redux i
-                    StyledComponents.
-                </p>
-                <Button>Zobacz Więcej</Button>
+                <Front className='front'>
+
+                </Front>
+                <Back className='back'>
+                    <h3>Weather State</h3>
+                    <p>
+                        Aplikacja umożliwia sprawdzenie pogody w dowolnym mieście na ziemi. W menu miasta istnieje
+                        możliwość dodania do listy ulubionych. Wszystkie ulubione miasta ładują się automatycznie. Dane
+                        pogodowe pobierane są z serwisu OpenWeatherMap. Do napisania Weather State użyłem TypeScript,
+                        React, Redux i StyledComponents.
+                    </p>
+                    <Button>Zobacz</Button>
+                </Back>
             </ProjectContainer>
             <ProjectContainer>
-                <h3>TodoApp</h3>
-                <p>
-                    TodoApp to bardzo prosta aplikacja, która służy do tworzenia list z zadaniami. Był to pierwszy
-                    projekt, który napisałem w TypeScripcie. TodoApp powstała przy pomocy React`a, Redux`a i
-                    StyledComponent`s.
-                </p>
-                <Button>Zobacz Więcej</Button>
+                <Front className='front'>
+
+                </Front>
+                <Back className='back'>
+                    <h3>TodoApp</h3>
+                    <p>
+                        TodoApp to bardzo prosta aplikacja, która służy do tworzenia listy zadań. Był to pierwszy
+                        projekt, który napisałem w TypeScripcie. TodoApp powstała przy pomocy React`a, Redux`a i
+                        StyledComponent`s.
+                    </p>
+                    <Button>Zobacz</Button>
+                </Back>
             </ProjectContainer>
             <ProjectContainer>
-                <h3>Orlik</h3>
-                <p>
-                    Orlik to aplikacja, dzięki której będzie można dodać, zarezerwować orlik. To przy pisaniu tej
-                    aplikacji poznawałem świat backend`u pisząc w języku PHP. W moim repozytorium można znaleźć kod
-                    pisany w JS oraz PHP. Jest to mój pierwszy samodzielny projekt.
-                </p>
-                <Button>Zobacz Więcej</Button>
+                <Front className='front'>
+
+                </Front>
+                <Back className='back'>
+                    <h3>Orlik</h3>
+                    <p>
+                        Orlik to aplikacja, dzięki której będzie 2można dodać, zarezerwować orlik. To przy pisaniu tej
+                        aplikacji poznawałem świat backend`u pisząc w języku PHP. W moim repozytorium można znaleźć kod
+                        pisany w JS oraz PHP. Jest to mój pierwszy samodzielny projekt.
+                    </p>
+                </Back>
             </ProjectContainer>
         </Div>
     )
