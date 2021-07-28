@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {quizLab, orlik, todoApp, weatherState} from '../images/Images';
 
 const Div = styled.div`
   grid-column: center-start / center-end;
@@ -16,12 +17,12 @@ const Div = styled.div`
 `
 
 const ProjectContainer = styled.div`
-  width: 25%;
-  height: 40rem;
-  transition: transform 1s;
   position: relative;
-  transform-style: preserve-3d;
+  width: 30%;
+  height: 45rem;
   margin: 1rem;
+  transform-style: preserve-3d;
+  transition: transform 1s;
 
   :hover {
     transform: rotateY(-180deg);
@@ -38,13 +39,18 @@ const Side = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
 `
 
 const Front = styled(Side)`
-  background-color: red;
+
 `
 const Back = styled(Side)`
-  background-color: green;
   transform: rotateY(180deg);
 
   h3 {
@@ -78,7 +84,6 @@ const Button = styled.button`
     -webkit-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
     -moz-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
     letter-spacing: 2px;
-    border-radius: 10rem;
   }
 `
 
@@ -86,10 +91,10 @@ export const Projects = () => {
     return (
         <Div id='projects'>
             <ProjectContainer>
-                <Front className='front'>
-
+                <Front>
+                    <img src={quizLab} alt="Game page from quiz lab"/>
                 </Front>
-                <Back className='back'>
+                <Back>
                     <h3>QuizLab</h3>
                     <p>Aplikacja dzięki której można poszerzać swoją wiedzę z zakresu frontend`u. Użytkownik może zagrać
                         bez konieczności rejestracji. Przy tworzeniu korzystałem z takich technologii jak TypeScript,
@@ -100,10 +105,10 @@ export const Projects = () => {
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
-                <Front className='front'>
-
+                <Front>
+                    <img src={weatherState} alt="Weather state page"/>
                 </Front>
-                <Back className='back'>
+                <Back>
                     <h3>Weather State</h3>
                     <p>
                         Aplikacja umożliwia sprawdzenie pogody w dowolnym mieście na ziemi. W menu miasta istnieje
@@ -115,10 +120,10 @@ export const Projects = () => {
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
-                <Front className='front'>
-
+                <Front>
+                    <img src={todoApp} alt="Todo app page"/>
                 </Front>
-                <Back className='back'>
+                <Back>
                     <h3>TodoApp</h3>
                     <p>
                         TodoApp to bardzo prosta aplikacja, która służy do tworzenia listy zadań. Był to pierwszy
@@ -129,13 +134,13 @@ export const Projects = () => {
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
-                <Front className='front'>
-
+                <Front>
+                    <img src={orlik} alt="Orlik page "/>
                 </Front>
-                <Back className='back'>
+                <Back>
                     <h3>Orlik</h3>
                     <p>
-                        Orlik to aplikacja, dzięki której będzie 2można dodać, zarezerwować orlik. To przy pisaniu tej
+                        Orlik to aplikacja, dzięki której będzie można dodać, zarezerwować orlik. To przy pisaniu tej
                         aplikacji poznawałem świat backend`u pisząc w języku PHP. W moim repozytorium można znaleźć kod
                         pisany w JS oraz PHP. Jest to mój pierwszy samodzielny projekt.
                     </p>
