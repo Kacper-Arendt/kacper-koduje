@@ -14,12 +14,24 @@ const Div = styled.div`
   box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
   perspective: 300rem;
   -moz-perspective: 300rem;
+  transition: all .2s;
+
+  > * {
+    transform: scale(.95);
+  }
+
+  :hover {
+    > * {
+      transform: scale(1);
+    }
+  }
+
 `
 
 const ProjectContainer = styled.div`
   position: relative;
   width: 30%;
-  height: 45rem;
+  height: 55rem;
   margin: 1rem;
   transform-style: preserve-3d;
   transition: transform 1s;
@@ -39,6 +51,10 @@ const Side = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+
+const Front = styled(Side)`
+  justify-self: center;
 
   img {
     height: 100%;
@@ -46,44 +62,48 @@ const Side = styled.div`
     object-fit: fill;
   }
 `
-
-const Front = styled(Side)`
-
-`
 const Back = styled(Side)`
   transform: rotateY(180deg);
+  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.2), rgba(117, 19, 93, 1.7));
 
   h3 {
     margin: 2rem 1rem 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
   }
 
   p {
-    padding: 1rem 2rem;
-    font-size: 1.4rem;
-    letter-spacing: 1.7px;
+    padding: 1rem 2.5rem;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
     line-height: 1.7;
+    overflow: hidden;
   }
 `
 
-
-const Button = styled.button`
-  text-align: center;
+const Button = styled.a`
   margin: 1rem;
   padding: 1rem;
+  border: 1px solid black;
   background: transparent;
+  color: white;
+  text-align: center;
   font-weight: 600;
+  font-size: 1.5rem;
   text-decoration: none;
-  text-transform: uppercase;
+  letter-spacing: 2px;
   cursor: pointer;
   transition: all .2s;
-  border: 1px solid black;
 
   :hover {
-    -webkit-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
-    -moz-box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.57);
-    letter-spacing: 2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transform: scale(1.1);
+    color: black;
+    border: 2px solid white;
+  }
+
+  :active {
+    transform: scale(1);
   }
 `
 
@@ -101,7 +121,7 @@ export const Projects = () => {
                         React, Redux, StyledComponents. Do stworzenia bazy danych oraz autoryzacji użytkowników użyłem
                         platformy Firebase.
                     </p>
-                    <Button>Zobacz</Button>
+                    <Button href="https://kacykvaa.github.io/quiz-lab/#/" target="_blank">Zobacz</Button>
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
@@ -116,7 +136,7 @@ export const Projects = () => {
                         pogodowe pobierane są z serwisu OpenWeatherMap. Do napisania Weather State użyłem TypeScript,
                         React, Redux i StyledComponents.
                     </p>
-                    <Button>Zobacz</Button>
+                    <Button href="https://kacykvaa.github.io/Weather-State/" target="_blank">Zobacz</Button>
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
@@ -130,7 +150,7 @@ export const Projects = () => {
                         projekt, który napisałem w TypeScripcie. TodoApp powstała przy pomocy React`a, Redux`a i
                         StyledComponent`s.
                     </p>
-                    <Button>Zobacz</Button>
+                    <Button href="https://kacykvaa.github.io/Todo-App/" target="_blank">Zobacz</Button>
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
