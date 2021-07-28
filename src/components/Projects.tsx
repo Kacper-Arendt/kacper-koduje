@@ -2,22 +2,28 @@ import styled from "styled-components"
 import {quizLab, orlik, todoApp, weatherState} from '../images/Images';
 
 const Div = styled.div`
-  grid-column: center-start / center-end;
+  grid-column: start / end;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  padding: 2rem;
+  padding: 3rem;
   background-color: rgba(0, 0, 0, .2);
-
-  border: .4rem solid black;
-  border-radius: 5rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
   perspective: 300rem;
   -moz-perspective: 300rem;
   transition: all .2s;
 
-  > * {
-    transform: scale(.95);
+  h2 {
+    flex: 1 100%;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 3px;
+  }
+
+  > div {
+    transform: scale(.97);
   }
 
   :hover {
@@ -31,6 +37,8 @@ const Div = styled.div`
 const ProjectContainer = styled.div`
   position: relative;
   width: 30%;
+  max-width: 55rem;
+  min-width: 40rem;
   height: 55rem;
   margin: 1rem;
   transform-style: preserve-3d;
@@ -110,6 +118,7 @@ const Button = styled.a`
 export const Projects = () => {
     return (
         <Div id='projects'>
+            <h2>Moje Projekty</h2>
             <ProjectContainer>
                 <Front>
                     <img src={quizLab} alt="Game page from quiz lab"/>
