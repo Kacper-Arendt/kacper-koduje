@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import {AiOutlineUser, AiOutlineMail, AiOutlinePhone, AiOutlineFacebook, AiOutlineGithub} from "react-icons/ai";
+import {AiOutlineUser, AiOutlineMail, AiOutlinePhone, AiOutlineFacebook, AiOutlineGithub, AiOutlineHome} from "react-icons/ai";
 
 const Div = styled.div`
   grid-column: start / end;
@@ -15,14 +15,13 @@ const Div = styled.div`
 `
 
 const ContactData = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   width: 45%;
   height: 100%;
   margin: 0 2rem;
   background-color: rgba(0, 0, 0, .2);
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
 `
 
 const Form = styled.div`
@@ -65,8 +64,8 @@ const Social = styled.div`
       transform: scale(1.05);
       fill: white;
     }
-    
-    :active{
+
+    :active {
       transform: scale(1);
     }
   }
@@ -88,6 +87,10 @@ export const Contact = () => {
                 <ElContainer>
                     <p><AiOutlinePhone/></p>
                     <p>721-446-865</p>
+                </ElContainer>
+                <ElContainer>
+                    <p><AiOutlineHome/></p>
+                    <p>Warszawa</p>
                 </ElContainer>
                 <Social>
                     <a href="https://www.facebook.com/kacper.arendt.5" target="_blank">
