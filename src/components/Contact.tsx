@@ -37,6 +37,40 @@ const Form = styled.form`
   width: 50%;
   height: 100%;
   background-color: red;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  place-items: center;
+
+  h3 {
+    grid-column: 1 /-1;
+  }
+
+  input {
+    :first-of-type {
+      grid-column: 1 / 3;
+      grid-row: 2;
+    }
+
+    :nth-of-type(2) {
+      grid-column: 1 / 3;
+      grid-row: 3;
+    }
+
+    :nth-of-type(3) {
+      grid-column: 3 /  -1;
+      grid-row: 2 / span 2;
+    }
+  }
+
+  button {
+    grid-column: 2 / span 2;
+  }
+
+  p {
+    grid-column: 4 / -1;
+  }
 `
 const ElContainer = styled.div`
   grid-column: 1 / 3;
@@ -118,16 +152,16 @@ export const Contact = () => {
                     <p>Warszawa</p>
                 </ElContainer>
                 <Social>
-                    <a href="https://www.facebook.com/kacper.arendt.5" target="_blank">
+                    <a href="https://www.facebook.com/kacper.arendt.5" target="_blank" rel="noopener noreferrer">
                         <AiOutlineFacebook/>
                     </a>
-                    <a href="https://github.com/kacykvaa" target="_blank">
+                    <a href="https://github.com/kacykvaa" target="_blank" rel="noopener noreferrer">
                         <AiOutlineGithub/>
                     </a>
                 </Social>
             </ContactData>
             <Form onSubmit={handleSubmit}>
-                <h2>Form</h2>
+                <h3>Nie czekaj, napisz do mnie już teraz!</h3>
                 <input type="text" name="name" placeholder="Imię..."/>
                 <input type="text" name='email' placeholder='Mail...'/>
                 <input type="text" name='message' placeholder="Twoja wiadomość..."/>
