@@ -33,45 +33,6 @@ const ContactData = styled.div`
   background-color: rgba(0, 0, 0, .2);
 `
 
-const Form = styled.form`
-  width: 50%;
-  height: 100%;
-  background-color: red;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  place-items: center;
-
-  h3 {
-    grid-column: 1 /-1;
-  }
-
-  input {
-    :first-of-type {
-      grid-column: 1 / 3;
-      grid-row: 2;
-    }
-
-    :nth-of-type(2) {
-      grid-column: 1 / 3;
-      grid-row: 3;
-    }
-
-    :nth-of-type(3) {
-      grid-column: 3 /  -1;
-      grid-row: 2 / span 2;
-    }
-  }
-
-  button {
-    grid-column: 2 / span 2;
-  }
-
-  p {
-    grid-column: 4 / -1;
-  }
-`
 const ElContainer = styled.div`
   grid-column: 1 / 3;
   display: flex;
@@ -111,6 +72,95 @@ const Social = styled.div`
     :active {
       transform: scale(1);
     }
+  }
+`
+const Form = styled.form`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  place-items: center;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+
+  h3 {
+    grid-column: 1 /-1;
+    font-size: 2.5rem;
+  }
+
+  input, textarea {
+    background-color: grey;
+    color: #e0ba22;
+    font-size: 2rem;
+    padding: 1rem;
+
+    :hover {
+      border: 2px solid #e0ba22;
+    }
+
+    :focus {
+      outline: .3rem solid #e0ba22;
+    }
+
+    ::placeholder {
+      color: white;
+    }
+  }
+
+  p {
+    grid-column: 4 / -1;
+    font-size: 2rem;
+    align-self: center;
+    justify-self: start;
+  }
+`
+const TextArea = styled.textarea`
+  grid-column: 3 /  -1;
+  grid-row: 2 / span 2;
+  width: 90%;
+  height: 90%;
+  align-self: end;
+  justify-self: start;
+  overflow: hidden;
+`
+const Input = styled.input`
+  width: 80%;
+
+  :first-of-type {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  :nth-of-type(2) {
+    grid-column: 1 / 3;
+    grid-row: 3;
+  }
+`
+
+const Button = styled.button`
+  grid-column: 2 / span 2;
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  background: transparent;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all .2s;
+  border: .3rem solid orange;
+
+  :hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transform: scale(1.1);
+    color: orange;
+    border-color: white;
+  }
+
+  :active {
+    transform: scale(1);
   }
 `
 
@@ -162,10 +212,10 @@ export const Contact = () => {
             </ContactData>
             <Form onSubmit={handleSubmit}>
                 <h3>Nie czekaj, napisz do mnie już teraz!</h3>
-                <input type="text" name="name" placeholder="Imię..."/>
-                <input type="text" name='email' placeholder='Mail...'/>
-                <input type="text" name='message' placeholder="Twoja wiadomość..."/>
-                <button>Wyślij</button>
+                <Input type="name" autoComplete="given-name" name="name" placeholder="Imię..."/>
+                <Input type="email" name='email' placeholder='Mail...'/>
+                <TextArea name='message' placeholder="Twoja wiadomość..."/>
+                <Button>Wyślij</Button>
                 {message && <p>{message}</p>}
             </Form>
         </Div>

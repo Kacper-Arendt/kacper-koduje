@@ -88,7 +88,6 @@ const Back = styled(Side)`
     overflow: hidden;
   }
 `
-
 const Button = styled.a`
   margin: 1rem;
   padding: 1rem;
