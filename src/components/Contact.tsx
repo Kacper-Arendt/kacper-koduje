@@ -1,5 +1,14 @@
-import styled from "styled-components"
-import {AiOutlineUser, AiOutlineMail, AiOutlinePhone, AiOutlineFacebook, AiOutlineGithub, AiOutlineHome} from "react-icons/ai";
+import React, {useState} from "react";
+import styled from "styled-components";
+import {sendForm} from 'emailjs-com';
+import {
+    AiOutlineUser,
+    AiOutlineMail,
+    AiOutlinePhone,
+    AiOutlineFacebook,
+    AiOutlineGithub,
+    AiOutlineHome
+} from "react-icons/ai";
 
 const Div = styled.div`
   grid-column: start / end;
@@ -24,8 +33,8 @@ const ContactData = styled.div`
   background-color: rgba(0, 0, 0, .2);
 `
 
-const Form = styled.div`
-  width: 40%;
+const Form = styled.form`
+  width: 50%;
   height: 100%;
   background-color: red;
 `
@@ -72,6 +81,22 @@ const Social = styled.div`
 `
 
 export const Contact = () => {
+    const [message, setMessage] = useState<string>();
+    const templateId = process.env["REACT_APP_TEMPLATE_ID"];
+    const userID = process.env["REACT_APP_USER_ID"];
+    const serviceID = process.env["REACT_APP_SERVICE_ID"];
+
+    const handleSubmit = async (e: any): Promise<void> => {
+        e.preventDefault();
+        if (templateId && userID && serviceID) {
+            const send = await sendForm(serviceID, templateId, e.target, userID);
+            if (send.status === 200)
+                setMessage("Zrobione!");
+        } else {
+            setMessage("Coś nie działa...")
+        }
+    }
+
     return (
         <Div id="contact">
             <h2>Skontaktuj się ze mną</h2>
@@ -101,8 +126,13 @@ export const Contact = () => {
                     </a>
                 </Social>
             </ContactData>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <h2>Form</h2>
+                <input type="text" name="name" placeholder="Imię..."/>
+                <input type="text" name='email' placeholder='Mail...'/>
+                <input type="text" name='message' placeholder="Twoja wiadomość..."/>
+                <button>Wyślij</button>
+                {message && <p>{message}</p>}
             </Form>
         </Div>
     )
