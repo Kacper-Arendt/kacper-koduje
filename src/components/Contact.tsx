@@ -9,6 +9,7 @@ import {
     AiOutlineGithub,
     AiOutlineHome
 } from "react-icons/ai";
+import {Spinner} from "./UI/Spinner";
 
 const Div = styled.div`
   grid-column: start / end;
@@ -125,6 +126,7 @@ const TextArea = styled.textarea`
 `
 const Input = styled.input`
   width: 80%;
+  max-width: 40rem;
 
   :first-of-type {
     grid-column: 1 / 3;
@@ -139,18 +141,19 @@ const Input = styled.input`
 
 const Button = styled.button`
   grid-column: 2 / span 2;
-  font-size: 2rem;
   margin: 1rem;
   padding: 1rem;
+  text-align: center;
+  border: .3rem solid orange;
+  transition: all .2s;
+
   background: transparent;
   color: white;
-  text-align: center;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 2rem;
   letter-spacing: 2px;
+  text-decoration: none;
+  font-weight: 600;
   cursor: pointer;
-  transition: all .2s;
-  border: .3rem solid orange;
 
   :hover {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -215,7 +218,7 @@ export const Contact = () => {
                 <Input type="name" autoComplete="given-name" name="name" placeholder="Imię..."/>
                 <Input type="email" name='email' placeholder='Mail...'/>
                 <TextArea name='message' placeholder="Twoja wiadomość..."/>
-                <Button>Wyślij</Button>
+                <Button><Spinner /></Button>
                 {message && <p>{message}</p>}
             </Form>
         </Div>
