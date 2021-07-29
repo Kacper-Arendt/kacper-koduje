@@ -54,11 +54,21 @@ const Social = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  transition: all .4s ease-in-out;
 
   svg {
-    font-size: 12rem;
-    fill: white;
+    font-size: 13rem;
+    fill: grey;
     background-color: rgba(0, 0, 0, .3);
+
+    :hover {
+      transform: scale(1.05);
+      fill: white;
+    }
+    
+    :active{
+      transform: scale(1);
+    }
   }
 `
 
@@ -80,10 +90,10 @@ export const Contact = () => {
                     <p>721-446-865</p>
                 </ElContainer>
                 <Social>
-                    <a href="https://www.facebook.com/kacper.arendt.5">
+                    <a href="https://www.facebook.com/kacper.arendt.5" target="_blank">
                         <AiOutlineFacebook/>
                     </a>
-                    <a href="https://github.com/kacykvaa">
+                    <a href="https://github.com/kacykvaa" target="_blank">
                         <AiOutlineGithub/>
                     </a>
                 </Social>
