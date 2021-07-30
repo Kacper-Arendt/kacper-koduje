@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: repeat(5, min-content) 8rem;
+  grid-template-rows: repeat(5, min-content) 7rem;
   grid-template-columns: 
           [start] minmax(6rem, 1fr) 
           [center-start] repeat(6, [col-start] minmax(min-content, 20rem) [col-end]) [ center-end ]

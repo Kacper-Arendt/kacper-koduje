@@ -4,7 +4,6 @@ import {Link} from 'react-scroll';
 const Navigation = styled.nav`
   position: sticky;
   top: 0;
-  width: 100vw;
   padding: 1rem;
   background: grey;
   text-align: center;
