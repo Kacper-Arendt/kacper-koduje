@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 
 import {Nav, AboutMe, Skills, Contact, Footer, Header, Projects} from "./components/Componets";
+import { Menu } from './components/UI/Menu';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -36,7 +37,8 @@ export function App() {
     return (
         <>
             <GlobalStyles/>
-            <Nav/>
+            <Menu />
+            {/*<Nav/>*/}
             <Wrapper>
                 <Header/>
                 <AboutMe/>
