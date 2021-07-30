@@ -10,11 +10,21 @@ import {
     AiOutlineHome
 } from "react-icons/ai";
 import {Spinner} from "./UI/Spinner";
+import {StyledWrapper} from "./UI/Wrapper";
+
+const Wrapper = styled(StyledWrapper)`
+    height: 40vh;
+`
+
 
 const Div = styled.div`
-  grid-column: start / end;
+  width: 100%;
+  height: 100%;
+  max-width: 230rem;
+  margin: auto 0;
   display: flex;
   flex-wrap: wrap;
+  padding: 10rem;
 
   h2 {
     text-align: center;
@@ -30,8 +40,8 @@ const ContactData = styled.div`
   grid-template-rows: repeat(4, 1fr);
   width: 45%;
   height: 100%;
-  margin: 0 2rem;
-  background-color: rgba(0, 0, 0, .2);
+  margin: 0 10rem 0 0;
+  background-color: rgba(0, 0, 0, .6);
 `
 
 const ElContainer = styled.div`
@@ -82,7 +92,7 @@ const Form = styled.form`
   place-items: center;
   width: 50%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .6);
 
   h3 {
     grid-column: 1 /-1;
@@ -196,46 +206,48 @@ export const Contact = () => {
     }
 
     return (
-        <Div id="contact">
+        <Wrapper id="contact">
             <h2>Skontaktuj się ze mną</h2>
-            <ContactData>
-                <ElContainer>
-                    <p><AiOutlineUser/></p>
-                    <p>Kacper Arendt</p>
-                </ElContainer>
-                <ElContainer>
-                    <p><AiOutlineMail/></p>
-                    <p>arendtkacper@gmail.com</p>
-                </ElContainer>
-                <ElContainer>
-                    <p><AiOutlinePhone/></p>
-                    <p>721-446-865</p>
-                </ElContainer>
-                <ElContainer>
-                    <p><AiOutlineHome/></p>
-                    <p>Warszawa</p>
-                </ElContainer>
-                <Social>
-                    <a href="https://www.facebook.com/kacper.arendt.5" target="_blank" rel="noopener noreferrer">
-                        <AiOutlineFacebook/>
-                    </a>
-                    <a href="https://github.com/kacykvaa" target="_blank" rel="noopener noreferrer">
-                        <AiOutlineGithub/>
-                    </a>
-                </Social>
-            </ContactData>
-            <Form onSubmit={handleSubmit}>
-                <h3>Nie czekaj, napisz do mnie już teraz!</h3>
-                <Input type="name" autoComplete="given-name" name="name" placeholder="Imię..."/>
-                <Input type="email" name='email' placeholder='Mail...'/>
-                <TextArea name='message' placeholder="Twoja wiadomość..."/>
-                <Button>
-                    {loading ? <Spinner/>
-                        :
-                        `Wyślij`
-                    }</Button>
-                {message && <p>{message}</p>}
-            </Form>
-        </Div>
+            <Div>
+                <ContactData>
+                    <ElContainer>
+                        <p><AiOutlineUser/></p>
+                        <p>Kacper Arendt</p>
+                    </ElContainer>
+                    <ElContainer>
+                        <p><AiOutlineMail/></p>
+                        <p>arendtkacper@gmail.com</p>
+                    </ElContainer>
+                    <ElContainer>
+                        <p><AiOutlinePhone/></p>
+                        <p>721-446-865</p>
+                    </ElContainer>
+                    <ElContainer>
+                        <p><AiOutlineHome/></p>
+                        <p>Warszawa</p>
+                    </ElContainer>
+                    <Social>
+                        <a href="https://www.facebook.com/kacper.arendt.5" target="_blank" rel="noopener noreferrer">
+                            <AiOutlineFacebook/>
+                        </a>
+                        <a href="https://github.com/kacykvaa" target="_blank" rel="noopener noreferrer">
+                            <AiOutlineGithub/>
+                        </a>
+                    </Social>
+                </ContactData>
+                <Form onSubmit={handleSubmit}>
+                    <h3>Nie czekaj, napisz do mnie już teraz!</h3>
+                    <Input type="name" autoComplete="given-name" name="name" placeholder="Imię..."/>
+                    <Input type="email" name='email' placeholder='Mail...'/>
+                    <TextArea name='message' placeholder="Twoja wiadomość..."/>
+                    <Button>
+                        {loading ? <Spinner/>
+                            :
+                            `Wyślij`
+                        }</Button>
+                    {message && <p>{message}</p>}
+                </Form>
+            </Div>
+        </Wrapper>
     )
 }
