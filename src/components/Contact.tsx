@@ -109,10 +109,9 @@ const Form = styled.form`
   }
 
   p {
-    grid-column: 4 / -1;
+    grid-column: 3 / -1;
+    grid-row: 4 /5;
     font-size: 2rem;
-    align-self: center;
-    justify-self: start;
   }
 `
 const TextArea = styled.textarea`
@@ -141,11 +140,13 @@ const Input = styled.input`
 
 const Button = styled.button`
   grid-column: 2 / span 2;
+  grid-row: 4 /5;
   margin: 1rem;
-  padding: 1rem;
   text-align: center;
   border: .3rem solid orange;
   transition: all .2s;
+  min-width: 10rem;
+  min-height: 6rem;
 
   background: transparent;
   color: white;
@@ -168,19 +169,29 @@ const Button = styled.button`
 `
 
 export const Contact = () => {
-    const [message, setMessage] = useState<string>();
+    const [message, setMessage] = useState<string | null>();
+    const [loading, setLoading] = useState(false);
+
     const templateId = process.env["REACT_APP_TEMPLATE_ID"];
     const userID = process.env["REACT_APP_USER_ID"];
     const serviceID = process.env["REACT_APP_SERVICE_ID"];
 
     const handleSubmit = async (e: any): Promise<void> => {
         e.preventDefault();
-        if (templateId && userID && serviceID) {
-            const send = await sendForm(serviceID, templateId, e.target, userID);
-            if (send.status === 200)
-                setMessage("Zrobione!");
-        } else {
-            setMessage("Coś nie działa...")
+        setLoading(true);
+        try {
+            if (templateId && userID && serviceID) {
+                const send = await sendForm(serviceID, templateId, e.target, userID);
+                if (send.status === 200)
+                    setMessage("Zrobione!");
+            }
+        } catch (err) {
+            setMessage('Coś poszło nie tak')
+        } finally {
+            setLoading(false);
+            setTimeout(() => {
+                setMessage(null)
+            }, 3000);
         }
     }
 
@@ -218,7 +229,11 @@ export const Contact = () => {
                 <Input type="name" autoComplete="given-name" name="name" placeholder="Imię..."/>
                 <Input type="email" name='email' placeholder='Mail...'/>
                 <TextArea name='message' placeholder="Twoja wiadomość..."/>
-                <Button><Spinner /></Button>
+                <Button>
+                    {loading ? <Spinner/>
+                        :
+                        `Wyślij`
+                    }</Button>
                 {message && <p>{message}</p>}
             </Form>
         </Div>
