@@ -2,10 +2,10 @@ import styled from "styled-components"
 
 const StyledFooter = styled.footer`
   display: flex;
-  height: 100%;
+  height: 7rem;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, .5);
   text-align: center;
   font-size: 1.8rem;
 

@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import {quizLab, orlik, todoApp, weatherState, bulb} from '../images/Images';
+import {quizLab, orlik, todoApp, weatherState} from '../images/Images';
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
-  background-image: url(${bulb});
   height: 90vh;
 `
 

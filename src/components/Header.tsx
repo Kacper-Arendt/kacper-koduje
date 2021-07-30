@@ -59,7 +59,7 @@ const LogoContainer = styled.div`
 
   :before {
     content: '';
-    background-image: conic-gradient( #016128, #e0ba22);
+    background-image: conic-gradient(#016128, #e0ba22);
     height: 150%;
     width: 150%;
     position: absolute;

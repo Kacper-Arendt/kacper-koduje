@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import {dog} from '../images/Images';
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Div = styled(StyledWrapper)`
-  height: 70vh;
-  background-image: url(${dog});
   
   div {
     width: 80%;

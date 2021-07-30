@@ -9,22 +9,22 @@ import {
     AiOutlineGithub,
     AiOutlineHome
 } from "react-icons/ai";
-import {mailbox} from '../images/Images';
 import {Spinner} from "./UI/Spinner";
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
-  background-image: url(${mailbox});
-  background-position: right;
+    height: 40vh;
 `
 
 
 const Div = styled.div`
+  width: 100%;
+  height: 100%;
+  max-width: 230rem;
   margin: auto 0;
   display: flex;
   flex-wrap: wrap;
   padding: 10rem;
-  height: 100%;
 
   h2 {
     text-align: center;
@@ -40,8 +40,8 @@ const ContactData = styled.div`
   grid-template-rows: repeat(4, 1fr);
   width: 45%;
   height: 100%;
-  margin: 0 2rem;
-  background-color: rgba(0, 0, 0, .7);
+  margin: 0 10rem 0 0;
+  background-color: rgba(0, 0, 0, .6);
 `
 
 const ElContainer = styled.div`
@@ -92,7 +92,7 @@ const Form = styled.form`
   place-items: center;
   width: 50%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, .6);
 
   h3 {
     grid-column: 1 /-1;

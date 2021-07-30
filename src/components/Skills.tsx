@@ -1,9 +1,8 @@
-import styled from "styled-components"
-import {icons, desk} from '../images/Images';
+import styled from "styled-components";
+import {icons} from '../images/Images';
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
-  background-image: url(${desk});
 `
 
 const Div = styled.div`
