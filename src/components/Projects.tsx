@@ -28,7 +28,7 @@ const Div = styled.div`
 
   :hover {
     > * {
-      transform: scale(1);
+      transform: scale(1);  
     }
   }
 
@@ -88,7 +88,6 @@ const Back = styled(Side)`
     overflow: hidden;
   }
 `
-
 const Button = styled.a`
   margin: 1rem;
   padding: 1rem;
@@ -130,7 +129,7 @@ export const Projects = () => {
                         React, Redux, StyledComponents. Do stworzenia bazy danych oraz autoryzacji użytkowników użyłem
                         platformy Firebase.
                     </p>
-                    <Button href="https://kacykvaa.github.io/quiz-lab/#/" target="_blank">Zobacz</Button>
+                    <Button href="https://kacykvaa.github.io/quiz-lab/#/" target="_blank" rel="noopener noreferrer">Zobacz</Button>
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
@@ -145,7 +144,7 @@ export const Projects = () => {
                         pogodowe pobierane są z serwisu OpenWeatherMap. Do napisania Weather State użyłem TypeScript,
                         React, Redux i StyledComponents.
                     </p>
-                    <Button href="https://kacykvaa.github.io/Weather-State/" target="_blank">Zobacz</Button>
+                    <Button href="https://kacykvaa.github.io/Weather-State/" target="_blank" rel="noopener noreferrer">Zobacz</Button>
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
@@ -159,7 +158,7 @@ export const Projects = () => {
                         projekt, który napisałem w TypeScripcie. TodoApp powstała przy pomocy React`a, Redux`a i
                         StyledComponent`s.
                     </p>
-                    <Button href="https://kacykvaa.github.io/Todo-App/" target="_blank">Zobacz</Button>
+                    <Button href="https://kacykvaa.github.io/Todo-App/" target="_blank" rel="noopener noreferrer">Zobacz</Button>
                 </Back>
             </ProjectContainer>
             <ProjectContainer>
