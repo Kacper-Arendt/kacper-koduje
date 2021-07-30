@@ -1,26 +1,24 @@
 import styled from "styled-components";
-import {hammock} from '../images/Images';
+import {bikepacking} from '../images/Images';
+import {StyledWrapper} from "./UI/Wrapper";
 
-const Div = styled.div`
-  height: 40vh;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(77, 77, 77, .3)), url(${hammock});
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+const Div = styled(StyledWrapper)`
+  height: 70vh;
+  background-image: url(${bikepacking});
   
-
-  div{
+  div {
     width: 80%;
+    max-width: 120rem;
+    margin: auto 0;
+    
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .8);
     border: .4rem solid black;
     border-radius: 5rem;
     align-items: center;
-    justify-self: center;
-    align-self: center;
   }
+
   p {
     :first-child {
       margin-top: 4rem;
@@ -32,7 +30,7 @@ const Div = styled.div`
 
     margin: .5rem 4rem;
     padding: .5rem 1rem;
-    font-size: 1.7rem;
+    font-size: 2rem;
     line-height: 1.5;
     letter-spacing: 1.7px;
     text-shadow: 1px 1px black;
@@ -42,6 +40,7 @@ const Div = styled.div`
 export const AboutMe = () => {
     return (
         <Div id='aboutMe'>
+            <h2> O mnie</h2>
             <div>
                 <p>
                     Mam 25 lat jestem żołnierzem oraz studentem trzeciego roku studiów inżynierskich -

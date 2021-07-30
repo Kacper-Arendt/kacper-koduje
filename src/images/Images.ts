@@ -7,6 +7,6 @@ import logo from './logo.svg';
 import icons from './iconsCollection.svg';
 import norway from './pexels-lukas-kloeppel-norway.jpg';
 import railway from './railway.jpg';
-import hammock from './hammock.jpg';
+import bikepacking from './marek-piwnicki-bikepacking.jpg';
 
-export {icons, orlik, me, todoApp, quizLab, weatherState, logo, norway, railway, hammock};
+export {icons, orlik, me, todoApp, quizLab, weatherState, logo, norway, railway, bikepacking};

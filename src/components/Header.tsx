@@ -1,5 +1,6 @@
 import styled, {keyframes} from "styled-components";
-import {logo, norway, railway} from '../images/Images'
+import {logo, railway} from '../images/Images'
+import {StyledWrapper} from "./UI/Wrapper";
 
 const showLogo = keyframes`
   0% {
@@ -23,19 +24,11 @@ const rotate = keyframes`
   }
 `
 
-const StyledHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const StyledHeader = styled(StyledWrapper)`
   justify-content: center;
+  height: 93vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(77, 77, 77, .3)), url(${railway});
 
-  
-  height: 90vh;
-  background-image:  linear-gradient(to right,rgba(0,0,0 , .5) , rgba(77,77,77, .3)), url(${railway});
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 `
 const H1 = styled.h1`
   font-size: 8rem;

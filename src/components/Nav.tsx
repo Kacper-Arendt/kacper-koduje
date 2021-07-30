@@ -31,8 +31,8 @@ export const Nav = () => {
 
     return (
         <Navigation>
-            <StyledLink to='header' smooth='easeOutCubic' spy={true} delay={500}>Początek</StyledLink>
-            <StyledLink to='aboutMe' smooth='easeOutCubic' spy={true} delay={500} offset={-200}>O mnie</StyledLink>
+            <StyledLink to='header' smooth='easeOutCubic' spy={true} delay={500} offset={-70}>Początek</StyledLink>
+            <StyledLink to='aboutMe' smooth='easeOutCubic' spy={true} delay={500} offset={70}>O mnie</StyledLink>
             <StyledLink to='skills' smooth='easeOutCubic' spy={true} delay={500}>Umiejętności</StyledLink>
             <StyledLink to='projects' smooth='easeOutCubic' spy={true} delay={500}>Projekty</StyledLink>
             <StyledLink to='contact' smooth='easeOutCubic' spy={true} delay={500}>Kontakt</StyledLink>
