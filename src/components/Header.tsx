@@ -29,8 +29,6 @@ const StyledHeader = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-
 `
 const H1 = styled.h1`
     font-size: 8rem;
