@@ -1,5 +1,5 @@
 import styled, {keyframes} from "styled-components";
-import {logo, railway} from '../images/Images'
+import {logo, bikepacking} from '../images/Images'
 import {StyledWrapper} from "./UI/Wrapper";
 
 const showLogo = keyframes`
@@ -27,8 +27,7 @@ const rotate = keyframes`
 const StyledHeader = styled(StyledWrapper)`
   justify-content: center;
   height: 93vh;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(77, 77, 77, .3)), url(${railway});
-
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(77, 77, 77, .3)), url(${bikepacking});
 `
 const H1 = styled.h1`
   font-size: 8rem;
@@ -60,8 +59,7 @@ const LogoContainer = styled.div`
 
   :before {
     content: '';
-    background-image: repeating-conic-gradient(red 10%, #4AAE9B 20%);
-    //background-image: conic-gradient(#f06, rgba(0, 0, 0, .5)), conic-gradient(silver 25%, #eee 0 50%, silver 0 75%, #eee 0);
+    background-image: conic-gradient( #016128, #e0ba22);
     height: 150%;
     width: 150%;
     position: absolute;

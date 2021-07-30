@@ -1,27 +1,26 @@
 import styled from "styled-components"
-import {icons} from '../images/Images';
+import {icons, desk} from '../images/Images';
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
+  background-image: url(${desk});
 `
 
 const Div = styled.div`
+  margin: auto 0;
   width: 80%;
+  max-width: 150rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .6);
   border: .4rem solid black;
   border-radius: 5rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
 
-  h2 {
+  h3 {
     flex: 3 100%;
     text-align: center;
     font-size: 3rem;
@@ -64,7 +63,7 @@ export const Skills = () => {
         <Wrapper>
             <h2>Umiejętności</h2>
             <Div id='skills'>
-                <h2>Technologie których używam</h2>
+                <h3>Technologie których używam</h3>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#javascript'}/>
@@ -107,7 +106,7 @@ export const Skills = () => {
                     </svg>
                     <h4>Node</h4>
                 </IconContainer>
-                <h2>Technologie które znam</h2>
+                <h3>Technologie które znam</h3>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#php'}/>

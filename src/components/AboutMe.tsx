@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import {bikepacking} from '../images/Images';
+import {dog} from '../images/Images';
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Div = styled(StyledWrapper)`
   height: 70vh;
-  background-image: url(${bikepacking});
+  background-image: url(${dog});
   
   div {
     width: 80%;
