@@ -2,7 +2,6 @@ import styled from "styled-components"
 import {icons} from '../images/Images';
 
 const Div = styled.div`
-  grid-column: center-start / center-end;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

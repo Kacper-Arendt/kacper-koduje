@@ -12,7 +12,6 @@ import {
 import {Spinner} from "./UI/Spinner";
 
 const Div = styled.div`
-  grid-column: start / end;
   display: flex;
   flex-wrap: wrap;
 

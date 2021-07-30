@@ -1,5 +1,5 @@
 import styled, {keyframes} from "styled-components";
-import logo from '../images/logo.svg'
+import {logo, norway, railway} from '../images/Images'
 
 const showLogo = keyframes`
   0% {
@@ -24,15 +24,22 @@ const rotate = keyframes`
 `
 
 const StyledHeader = styled.div`
-  grid-column: start / end;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  
+  height: 90vh;
+  background-image:  linear-gradient(to right,rgba(0,0,0 , .5) , rgba(77,77,77, .3)), url(${railway});
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `
 const H1 = styled.h1`
-    font-size: 8rem;
-    color: white;
+  font-size: 8rem;
+  color: white;
 
   :first-of-type {
     margin-top: 5rem;

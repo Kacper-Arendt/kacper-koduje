@@ -2,7 +2,6 @@ import styled from "styled-components"
 import {quizLab, orlik, todoApp, weatherState} from '../images/Images';
 
 const Div = styled.div`
-  grid-column: start / end;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;

@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 const StyledFooter = styled.footer`
-  grid-column: start / end;
   display: flex;
   height: 100%;
   align-items: center;

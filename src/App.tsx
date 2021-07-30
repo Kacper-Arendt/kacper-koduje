@@ -26,15 +26,9 @@ const GlobalStyles = createGlobalStyle`
     color: white;
   }
 `
-const Grid = styled.div`
-  display: grid;
-  grid-template-rows: repeat(5, min-content) 7rem;
-  grid-template-columns: 
-          [start] minmax(6rem, 1fr) 
-          [center-start] repeat(6, [col-start] minmax(min-content, 20rem) [col-end]) [ center-end ]
-          minmax(6rem, 1fr)[end];
-  
-  grid-gap: 20rem 0;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 export function App() {
@@ -43,14 +37,14 @@ export function App() {
         <>
             <GlobalStyles/>
             <Nav/>
-            <Grid>
+            <Wrapper>
                 <Header/>
                 <AboutMe/>
                 <Skills/>
                 <Projects/>
                 <Contact/>
                 <Footer/>
-            </Grid>
+            </Wrapper>
         </>
     )
 }
