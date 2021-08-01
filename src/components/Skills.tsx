@@ -6,25 +6,28 @@ const Wrapper = styled(StyledWrapper)`
 `
 
 const Div = styled.div`
-  margin: auto 0;
-  width: 80%;
+  margin: 3rem 0;
+  width: 90%;
   max-width: 150rem;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
   background-color: rgba(0, 0, 0, .6);
-  border: .4rem solid black;
+  border: .2rem solid black;
   border-radius: 5rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
 
+
   h3 {
-    flex: 3 100%;
+    flex: 1 100%;
     text-align: center;
-    font-size: 3rem;
-    margin: 1rem 0 1.5rem;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
     color: #e0ba22;
+
+    :last-of-type {
+      margin-top: .5rem;
+    }
   }
 `
 
@@ -32,23 +35,23 @@ const IconContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 3rem 1rem;
   justify-content: center;
-
+  width: 30%;
   align-items: center;
-  width: 20%;
 
   :hover {
     color: orange;
   }
 
   h4 {
-    font-size: 2rem;
+    margin: 1rem 0;
   }
 
   svg {
-    width: 11rem;
+    width: 4rem;
+    height: 4rem;
     transition: all .3s;
+    margin: 1rem 0 0;
 
     :hover {
       transform: scale(1.2);

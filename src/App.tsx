@@ -38,12 +38,11 @@ export function App() {
         <>
             <GlobalStyles/>
             <Menu />
-            {/*<Nav/>*/}
             <Wrapper>
                 <Header/>
                 <AboutMe/>
                 <Skills/>
-                <Projects/>
+                {/*<Projects/>*/}
                 <Contact/>
                 <Footer/>
             </Wrapper>

@@ -25,32 +25,14 @@ const rotate = keyframes`
 `
 
 const StyledHeader = styled(StyledWrapper)`
+  height: 100vh;
   justify-content: center;
-  height: 93vh;
   background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(77, 77, 77, .3)), url(${bikepacking});
-`
-const H1 = styled.h1`
-  font-size: 8rem;
-  color: white;
-
-  :first-of-type {
-    margin-top: 5rem;
-
-    :first-letter {
-      color: #016128;
-    }
-  }
-
-  :last-of-type {
-    :first-letter {
-      color: #e0ba22;
-    }
-  }
 `
 
 const LogoContainer = styled.div`
-  width: 30rem;
-  height: 30rem;
+  width: 20rem;
+  height: 20rem;
   position: sticky;
   box-shadow: 0 20px 35px rgba(0, 0, 0, .3);
   border-radius: .5rem;
@@ -72,7 +54,7 @@ const LogoContainer = styled.div`
     content: "";
     background-image: url(${logo});
     background-repeat: no-repeat;
-    background-size: 12rem;
+    background-size: 7rem;
     background-position: center;
     height: 96%;
     width: 96%;
@@ -82,8 +64,26 @@ const LogoContainer = styled.div`
     top: 2%;
     left: 2%;
   }
-
 `
+const H1 = styled.h1`
+  font-size: 6rem;
+  color: white;
+
+  :first-of-type {
+    margin-top: 5rem;
+
+    :first-letter {
+      color: #016128;
+    }
+  }
+
+  :last-of-type {
+    :first-letter {
+      color: #e0ba22;
+    }
+  }
+`
+
 
 export const Header = () => {
     return (

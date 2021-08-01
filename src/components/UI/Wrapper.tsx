@@ -5,7 +5,6 @@ export const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -14,10 +13,10 @@ export const StyledWrapper = styled.div`
   h2 {
     background: rgba(0, 0, 0, .3);
     width: 100%;
-    height: 7rem;
+    height: 4rem;
+    line-height: 4rem;
     text-align: center;
-    line-height: 7rem;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `
 

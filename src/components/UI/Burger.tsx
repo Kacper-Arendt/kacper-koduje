@@ -17,7 +17,7 @@ const moveFromTop = keyframes`
 export const Burger = styled.button<MenuIProps>`
   position: fixed;
   top: 5%;
-  right: 3rem;
+  right: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

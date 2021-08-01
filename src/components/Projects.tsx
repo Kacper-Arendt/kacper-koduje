@@ -3,7 +3,6 @@ import {quizLab, orlik, todoApp, weatherState} from '../images/Images';
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
-  height: 90vh;
 `
 
 const Div = styled.div`
@@ -11,19 +10,10 @@ const Div = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  padding: 3rem;
-  perspective: 300rem;
-  -moz-perspective: 300rem;
+  padding: 1rem 0;
+  perspective: 500rem;
+  -moz-perspective: 500rem;
   transition: all .2s;
-
-  h2 {
-    flex: 1 100%;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-size: 4rem;
-    letter-spacing: 3px;
-  }
 
   > div {
     transform: scale(.97);
@@ -39,15 +29,17 @@ const Div = styled.div`
 
 const ProjectContainer = styled.div`
   position: relative;
-  max-width: 55rem;
-  min-width: 40rem;
-  height: 55rem;
-  margin: 1rem;
+  width: 80vw;
+  height: 40rem;
+  margin: 1.5rem 0;
   transform-style: preserve-3d;
   transition: transform 1s;
 
   :hover {
-    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY( 180deg );
   }
 `
 
@@ -75,18 +67,17 @@ const Front = styled(Side)`
 const Back = styled(Side)`
   transform: rotateY(180deg);
   background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.2), rgba(117, 19, 93, 1.7));
+  text-align: center;
 
   h3 {
-    margin: 2rem 1rem 1rem;
-    font-size: 2.5rem;
-    text-align: center;
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
   }
 
   p {
-    padding: 1rem 2.5rem;
-    font-size: 1.8rem;
+    padding: 1rem 2rem;
     letter-spacing: 2px;
-    line-height: 1.7;
+    line-height: 2;
     overflow: hidden;
   }
 `
@@ -98,7 +89,6 @@ const Button = styled.a`
   color: white;
   text-align: center;
   font-weight: 600;
-  font-size: 1.5rem;
   text-decoration: none;
   letter-spacing: 2px;
   cursor: pointer;

@@ -2,35 +2,34 @@ import styled from "styled-components";
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Div = styled(StyledWrapper)`
-  
+
   div {
-    width: 80%;
+    width: 85%;
     max-width: 120rem;
-    margin: auto 0;
-    
+    margin: 3rem 0;
+
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, .8);
-    border: .4rem solid black;
+    background-color: rgba(0, 0, 0, .6);
+    border: .2rem solid black;
     border-radius: 5rem;
     align-items: center;
   }
 
   p {
+    margin: .5rem 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    letter-spacing: 1.7px;
+    text-align: center;
+
     :first-child {
-      margin-top: 4rem;
+      margin-top: 3rem;
     }
 
     :last-of-type {
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
-
-    margin: .5rem 4rem;
-    padding: .5rem 1rem;
-    font-size: 2rem;
-    line-height: 1.5;
-    letter-spacing: 1.7px;
-    text-shadow: 1px 1px black;
   }
 `
 
