@@ -74,13 +74,7 @@ export const Burger = styled.button<MenuIProps>`
     height: .45rem;
   }
 } @media${device.laptopL} {
-  width: 5rem;
-  height: 5rem;
-
-  div {
-    width: 5rem;
-    height: .5rem;
-  }
+  display: none;
 }
 `;
 
