@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import {StyledWrapper} from "./UI/Wrapper";
+import {device} from "../Models/MediaQueries";
 
 const Div = styled(StyledWrapper)`
-
   div {
     width: 85%;
-    max-width: 120rem;
+    max-width: 100rem;
     margin: 3rem 0;
 
     display: flex;
@@ -17,20 +17,18 @@ const Div = styled(StyledWrapper)`
   }
 
   p {
-    margin: .5rem 2rem;
-    font-size: 1rem;
+    margin: 2rem;
     line-height: 1.8;
     letter-spacing: 1.7px;
     text-align: center;
-
-    :first-child {
-      margin-top: 3rem;
-    }
-
-    :last-of-type {
-      margin-bottom: 3rem;
-    }
   }
+
+@media${device.desktop} {
+  p {
+    line-height: 1.5;
+  }
+}
+
 `
 
 export const AboutMe = () => {

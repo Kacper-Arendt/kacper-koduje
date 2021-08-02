@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {icons} from '../images/Images';
+import {device} from "../Models/MediaQueries";
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
@@ -7,8 +8,8 @@ const Wrapper = styled(StyledWrapper)`
 
 const Div = styled.div`
   margin: 3rem 0;
-  width: 90%;
-  max-width: 150rem;
+  width: 80%;
+  max-width: 110rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -21,8 +22,7 @@ const Div = styled.div`
   h3 {
     flex: 1 100%;
     text-align: center;
-    font-size: 1.5rem;
-    margin: 2rem 0 1rem;
+    margin: 2rem 0;
     color: #e0ba22;
 
     :last-of-type {
@@ -43,8 +43,9 @@ const IconContainer = styled.div`
     color: orange;
   }
 
-  h4 {
+  p {
     margin: 1rem 0;
+    font-weight: 700;
   }
 
   svg {
@@ -58,6 +59,17 @@ const IconContainer = styled.div`
       fill: orange;
     }
   }
+
+@media${device.laptop} {
+  svg {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+@media${device.laptop} {
+  width: 25%;
+  margin: 3rem 0;
+}
 `
 
 export const Skills = () => {
@@ -70,68 +82,68 @@ export const Skills = () => {
                     <svg>
                         <use href={icons + '#javascript'}/>
                     </svg>
-                    <h4>JavaScript</h4>
+                    <p>JavaScript</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#typescript'}/>
                     </svg>
-                    <h4>TypeScript</h4>
+                    <p>TypeScript</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#react'}/>
                     </svg>
-                    <h4>React</h4>
+                    <p>React</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#css'}/>
                     </svg>
-                    <h4>CSS</h4>
+                    <p>CSS</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#html-5'}/>
                     </svg>
-                    <h4>HTML</h4>
+                    <p>HTML</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#github'}/>
                     </svg>
-                    <h4>Github</h4>
+                    <p>Github</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#nodejs'}/>
                     </svg>
-                    <h4>Node</h4>
+                    <p>Node</p>
                 </IconContainer>
                 <h3>Technologie które znam</h3>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#php'}/>
                     </svg>
-                    <h4>Php</h4>
+                    <p>Php</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#docker'}/>
                     </svg>
-                    <h4>Docker</h4>
+                    <p>Docker</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#mysql'}/>
                     </svg>
-                    <h4>MySQL</h4>
+                    <p>MySQL</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#composer'}/>
                     </svg>
-                    <h4>Composer</h4>
+                    <p>Composer</p>
                 </IconContainer>
             </Div>
         </Wrapper>

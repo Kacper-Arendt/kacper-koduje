@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {device} from '../../Models/MediaQueries';
 
 export const StyledWrapper = styled.div`
   display: flex;
@@ -17,7 +18,29 @@ export const StyledWrapper = styled.div`
     line-height: 4rem;
     text-align: center;
     font-size: 2rem;
+    flex: 1 100%;
   }
+  
+  h2{
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+@media${device.laptop} {
+  h2 {
+  font-size: 2.5rem;
+  }
+  h3{
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
 `
 
 export const Wrapper = () => {

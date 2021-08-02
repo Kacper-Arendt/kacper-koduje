@@ -60,7 +60,7 @@ const LogoContainer = styled.div`
     width: 96%;
     position: absolute;
     background-color: #1c1b29;
-    border-radius: .5rem;
+    border-raditabletus: .5rem;
     top: 2%;
     left: 2%;
   }

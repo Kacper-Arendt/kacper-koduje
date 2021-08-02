@@ -11,76 +11,51 @@ import {
 } from "react-icons/ai";
 import {Spinner} from "./UI/Spinner";
 import {StyledWrapper} from "./UI/Wrapper";
+import {device} from "../Models/MediaQueries";
 
 const Wrapper = styled(StyledWrapper)`
+@media${device.laptopL} {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  margin: 2rem 0;
+}
 `
 
-const ContactData = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+const FlexItem = styled.div`
   width: 80%;
   height: 100%;
-  padding: .5rem;
+  max-width: 80rem;
   margin: 2rem 0 1rem;
   background-color: rgba(0, 0, 0, .6);
+
+@media${device.laptopL} {
+  width: 45%;
+  height: 20rem;
+}
 `
 
-const ElContainer = styled.div`
-  grid-column: 1 / 3;
-  display: flex;
-  align-items: center;
-
-  p {
-    margin-left: .5rem;
-    white-space: nowrap;
-    font-size: 1.2rem;
-
-    :first-of-type {
-      color: #e0ba22;
-    }
-  }
-`
-const Social = styled.div`
-  grid-column: 3/ -1;
-  grid-row: 1 / -1;
-
+const ContactData = styled(FlexItem)`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: end;
-  transition: all .4s ease-in-out;
+  padding: .5rem;
 
-  svg {
-    font-size: 4rem;
-    fill: grey;
-    background-color: rgba(0, 0, 0, .3);
-
-    :hover {
-      transform: scale(1.05);
-      fill: white;
-    }
-
-    :active {
-      transform: scale(1);
-    }
-  }
+@media${device.mobileM} {
+  flex-direction: row;
+  justify-content: space-between;
+}
 `
-const Form = styled.form`
+const Form = styled(FlexItem)`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(7, 1fr);
   place-items: center;
-  width: 80%;
-  height: 100%;
-  margin: 1rem 0 3rem;
-  background-color: rgba(0, 0, 0, .6);
 
   h3 {
     grid-column: 1 /-1;
     grid-row: 1;
-    margin-top: 1rem;
-    font-size: 1.3rem;
+    margin: 1rem 0;
     text-align: center;
     line-height: 1.5;
   }
@@ -91,7 +66,7 @@ const Form = styled.form`
     padding: .5rem;
 
     :hover {
-      border: 1px solid #e0ba22;
+      outline: 1px solid #e0ba22;
     }
 
     :focus {
@@ -107,6 +82,82 @@ const Form = styled.form`
     grid-column: 1 /-1;
     grid-row: 7;
   }
+
+@media${device.laptop} {
+  grid-template-rows: repeat(4, 1fr);
+  padding-bottom: 1rem;
+
+  p {
+    grid-column: 3 /-1;
+    grid-row: 4;
+  }
+} @media${device.laptopL} {
+  input {
+    font-size: 1.3rem;
+  }
+
+  textarea {
+    font-size: 1rem;
+  }
+}
+`
+
+const Data = styled.div`
+  display: flex;
+  flex-direction: column;
+
+@media${device.laptopL} {
+  justify-content: center;
+}
+`
+
+const Element = styled.div`
+  display: flex;
+  margin: .5rem 0;
+
+  p {
+    margin-left: .5rem;
+    white-space: nowrap;
+
+    :first-of-type {
+      color: #e0ba22;
+    }
+  }
+
+@media${device.laptopL} {
+  margin: 1rem 0;
+}
+`
+const Social = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all .4s ease-in-out;
+
+  svg {
+    font-size: 5rem;
+    fill: grey;
+    background-color: rgba(0, 0, 0, .3);
+    margin: .5rem;
+
+    :hover {
+      transform: scale(1.05);
+      fill: white;
+    }
+
+    :active {
+      transform: scale(1);
+    }
+  }
+
+@media${device.mobileM} {
+  svg {
+    font-size: 7rem;
+  }
+} @media${device.laptopL} {
+  flex-direction: column;
+}
 `
 const TextArea = styled.textarea`
   grid-column: 1 /  -1;
@@ -115,6 +166,11 @@ const TextArea = styled.textarea`
   max-width: 40rem;
   height: 90%;
   overflow: hidden;
+
+@media${device.laptop} {
+  grid-column: 3 / -1;
+  grid-row: 2 / 4;
+}
 `
 const Input = styled.input`
   width: 80%;
@@ -129,8 +185,11 @@ const Input = styled.input`
   :nth-of-type(2) {
     grid-row: 3;
   }
-`
 
+@media${device.laptop} {
+  grid-column: 1 /3;
+}
+`
 const Button = styled.button`
   grid-column: 2 / span 2;
   grid-row: 6;
@@ -154,6 +213,10 @@ const Button = styled.button`
   :active {
     transform: scale(1);
   }
+
+@media${device.laptop} {
+  grid-row: 4;
+}
 `
 
 export const Contact = () => {
@@ -187,22 +250,24 @@ export const Contact = () => {
         <Wrapper id="contact">
             <h2>Skontaktuj się ze mną</h2>
             <ContactData>
-                <ElContainer>
-                    <p><AiOutlineUser/></p>
-                    <p>Kacper Arendt</p>
-                </ElContainer>
-                <ElContainer>
-                    <p><AiOutlineMail/></p>
-                    <p>arendtkacper@gmail.com</p>
-                </ElContainer>
-                <ElContainer>
-                    <p><AiOutlinePhone/></p>
-                    <p>721-446-865</p>
-                </ElContainer>
-                <ElContainer>
-                    <p><AiOutlineHome/></p>
-                    <p>Warszawa</p>
-                </ElContainer>
+                <Data>
+                    <Element>
+                        <p><AiOutlineUser/></p>
+                        <p>Kacper Arendt</p>
+                    </Element>
+                    <Element>
+                        <p><AiOutlineMail/></p>
+                        <p>arendtkacper@gmail.com</p>
+                    </Element>
+                    <Element>
+                        <p><AiOutlinePhone/></p>
+                        <p>721-446-865</p>
+                    </Element>
+                    <Element>
+                        <p><AiOutlineHome/></p>
+                        <p>Warszawa</p>
+                    </Element>
+                </Data>
                 <Social>
                     <a href="https://www.facebook.com/kacper.arendt.5" target="_blank" rel="noopener noreferrer">
                         <AiOutlineFacebook/>
