@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 
-import {Nav, AboutMe, Skills, Contact, Footer, Header, Projects} from "./components/Componets";
+import {AboutMe, Skills, Contact, Footer, Header, Projects} from "./components/Componets";
+import {Menu} from './components/UI/Menu';
+import {device} from './Models/MediaQueries';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -16,7 +18,15 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #636363, #a2ab58); 
+    background: linear-gradient(to right, #636363, #a2ab58);
+
+  @media${device.tablet} {
+    font-size: 71.25%;
+  } @media${device.laptop} {
+    font-size: 81.25%;
+  } @media${device.desktop} {
+    font-size: 91.25%;
+  }
   }
 
   body {
@@ -36,12 +46,12 @@ export function App() {
     return (
         <>
             <GlobalStyles/>
-            <Nav/>
+            <Menu/>
             <Wrapper>
                 <Header/>
                 <AboutMe/>
                 <Skills/>
-                <Projects/>
+                {/*<Projects/>*/}
                 <Contact/>
                 <Footer/>
             </Wrapper>

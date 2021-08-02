@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 const Span = styled.div`
   margin: 1rem auto 0;
-  min-width: 7rem;
+  min-width: 5rem;
   padding-bottom: .5rem;
 
   div {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem;
+    height: 1rem;
     background-color: white;
 
     border-radius: 100%;

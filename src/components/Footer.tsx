@@ -5,12 +5,11 @@ const StyledFooter = styled.footer`
   height: 7rem;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .8);
   text-align: center;
-  font-size: 1.8rem;
 
   p {
-    padding: 0 3rem;
+    padding: 0 1rem;
   }
 
   a {

@@ -1,37 +1,34 @@
 import styled from "styled-components";
 import {StyledWrapper} from "./UI/Wrapper";
+import {device} from "../Models/MediaQueries";
 
 const Div = styled(StyledWrapper)`
-  
   div {
-    width: 80%;
-    max-width: 120rem;
-    margin: auto 0;
-    
+    width: 85%;
+    max-width: 100rem;
+    margin: 3rem 0;
+
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, .8);
-    border: .4rem solid black;
+    background-color: rgba(0, 0, 0, .6);
+    border: .2rem solid black;
     border-radius: 5rem;
     align-items: center;
   }
 
   p {
-    :first-child {
-      margin-top: 4rem;
-    }
-
-    :last-of-type {
-      margin-bottom: 4rem;
-    }
-
-    margin: .5rem 4rem;
-    padding: .5rem 1rem;
-    font-size: 2rem;
-    line-height: 1.5;
+    margin: 2rem;
+    line-height: 1.8;
     letter-spacing: 1.7px;
-    text-shadow: 1px 1px black;
+    text-align: center;
   }
+
+@media${device.desktop} {
+  p {
+    line-height: 1.5;
+  }
+}
+
 `
 
 export const AboutMe = () => {
