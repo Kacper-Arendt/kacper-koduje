@@ -17,7 +17,7 @@ const Wrapper = styled(StyledWrapper)`
 @media${device.laptopL} {
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: center;
   margin: 2rem 0;
 }
@@ -26,8 +26,8 @@ const Wrapper = styled(StyledWrapper)`
 const FlexItem = styled.div`
   width: 80%;
   height: 100%;
-  max-width: 80rem;
-  margin: 2rem 0 1rem;
+  max-width: 60rem;
+  margin: 2rem 2rem 1rem;
   background-color: rgba(0, 0, 0, .6);
 
 @media${device.laptopL} {

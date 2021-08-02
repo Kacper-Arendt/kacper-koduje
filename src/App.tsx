@@ -1,8 +1,7 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 
-import {AboutMe, Skills, Contact, Footer, Header, Projects} from "./components/Componets";
-import {Menu} from './components/UI/Menu';
+import {AboutMe, Skills, Contact, Footer, Header, Projects, Menu} from "./components/Componets";
 import {device} from './Models/MediaQueries';
 
 const GlobalStyles = createGlobalStyle`

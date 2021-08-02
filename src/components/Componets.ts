@@ -4,4 +4,4 @@ export * from './Contact';
 export * from './Footer';
 export * from './Header';
 export * from './Projects';
-export * from './Nav';
+export * from './UI/Menu';
