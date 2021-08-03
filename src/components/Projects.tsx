@@ -120,7 +120,6 @@ const Side = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
 `
 
 const Front = styled(Side)`
