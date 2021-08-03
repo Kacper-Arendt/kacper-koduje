@@ -1,46 +1,73 @@
 import styled from "styled-components"
-import {quizLab, orlik, todoApp, weatherState} from '../images/Images';
+import {ProjectData} from "./UI/ProjectData";
 import {StyledWrapper} from "./UI/Wrapper";
+import {useEffect, useState} from "react";
+import {MdKeyboardArrowLeft, MdKeyboardArrowRight, MdRotateLeft, MdRotateRight} from "react-icons/md";
+
+interface IProps {
+    isActive: boolean;
+}
 
 const Wrapper = styled(StyledWrapper)`
 `
 
 const Div = styled.div`
-  margin: auto 0;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
   padding: 1rem 0;
   perspective: 500rem;
   -moz-perspective: 500rem;
   transition: all .2s;
 
-  > div {
-    transform: scale(.97);
-  }
+  display: grid;
+  grid-template-columns: 7vw 80vw 7vw;
+  grid-template-rows: 80vh 1fr;
+  place-items: center;
 
-  :hover {
-    > * {
-      transform: scale(1);
+  svg {
+    font-size: 3rem;
+    grid-row: 1;
+
+    :first-of-type {
+      grid-column: 1;
+    }
+
+    :last-of-type {
+      grid-column: 3;
     }
   }
 
+  button {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: orange;
+    color: black;
+    padding: .2rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
+    
+    :hover{
+      transform: scale(1.05);
+    }
+    :active{
+      transform: scale(1);
+    }
+  }
 `
 
-const ProjectContainer = styled.div`
+const ProjectContainer = styled.div<IProps>`
   position: relative;
-  width: 80vw;
-  height: 40rem;
-  margin: 1.5rem 0;
+  width: 100%;
+  height: 85%;
   transform-style: preserve-3d;
   transition: transform 1s;
 
-  :hover {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY( 180deg );
-  }
+  -webkit-transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
+  -moz-transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
+  -o-transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
+  transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
 `
 
 const Side = styled.div`
@@ -63,6 +90,8 @@ const Front = styled(Side)`
     width: 100%;
     object-fit: fill;
   }
+
+
 `
 const Back = styled(Side)`
   transform: rotateY(180deg);
@@ -107,77 +136,55 @@ const Button = styled.a`
 `
 
 export const Projects = () => {
+    const [active, setActive] = useState(false);
+    const [currentProject, setCurrentProject] = useState(0);
+
+    useEffect(() => {
+        currentProjectHandler();
+    }, [currentProject])
+
+    const currentProjectHandler = () => {
+        return (
+            <ProjectContainer isActive={active} key={ProjectData[currentProject].id}>
+                <Front>
+                    <img src={ProjectData[currentProject].img} alt={ProjectData[currentProject].alt}/>
+                </Front>
+                <Back>
+                    <h3>{ProjectData[currentProject].name}</h3>
+                    <p>{ProjectData[currentProject].description}</p>
+                    <Button href={ProjectData[currentProject].link} target="_blank"
+                            rel="noopener noreferrer">Zobacz</Button>
+                </Back>
+            </ProjectContainer>
+        )
+    }
+    const nextProjectHandler = () => {
+        if (currentProject < 3) {
+            setCurrentProject(currentProject + 1);
+        } else {
+            setCurrentProject(0);
+        }
+    }
+    const prevProjectHandler = () => {
+        if (currentProject > 0) {
+            setCurrentProject(currentProject - 1);
+        } else {
+            setCurrentProject(3);
+        }
+    }
+
     return (
         <Wrapper id='projects'>
             <h2>Projekty</h2>
             <Div>
-                <ProjectContainer>
-                    <Front>
-                        <img src={quizLab} alt="Game page from quiz lab"/>
-                    </Front>
-                    <Back>
-                        <h3>QuizLab</h3>
-                        <p>Aplikacja dzięki której można poszerzać swoją wiedzę z zakresu frontend`u. Użytkownik może
-                            zagrać
-                            bez konieczności rejestracji. Przy tworzeniu korzystałem z takich technologii jak
-                            TypeScript,
-                            React, Redux, StyledComponents. Do stworzenia bazy danych oraz autoryzacji użytkowników
-                            użyłem
-                            platformy Firebase.
-                        </p>
-                        <Button href="https://kacykvaa.github.io/quiz-lab/#/" target="_blank"
-                                rel="noopener noreferrer">Zobacz</Button>
-                    </Back>
-                </ProjectContainer>
-                <ProjectContainer>
-                    <Front>
-                        <img src={weatherState} alt="Weather state page"/>
-                    </Front>
-                    <Back>
-                        <h3>Weather State</h3>
-                        <p>
-                            Aplikacja umożliwia sprawdzenie pogody w dowolnym mieście na ziemi. W menu miasta istnieje
-                            możliwość dodania do listy ulubionych. Wszystkie ulubione miasta ładują się automatycznie.
-                            Dane
-                            pogodowe pobierane są z serwisu OpenWeatherMap. Do napisania Weather State użyłem
-                            TypeScript,
-                            React, Redux i StyledComponents.
-                        </p>
-                        <Button href="https://kacykvaa.github.io/Weather-State/" target="_blank"
-                                rel="noopener noreferrer">Zobacz</Button>
-                    </Back>
-                </ProjectContainer>
-                <ProjectContainer>
-                    <Front>
-                        <img src={todoApp} alt="Todo app page"/>
-                    </Front>
-                    <Back>
-                        <h3>TodoApp</h3>
-                        <p>
-                            TodoApp to bardzo prosta aplikacja, która służy do tworzenia listy zadań. Był to pierwszy
-                            projekt, który napisałem w TypeScripcie. TodoApp powstała przy pomocy React`a, Redux`a i
-                            StyledComponent`s.
-                        </p>
-                        <Button href="https://kacykvaa.github.io/Todo-App/" target="_blank"
-                                rel="noopener noreferrer">Zobacz</Button>
-                    </Back>
-                </ProjectContainer>
-                <ProjectContainer>
-                    <Front>
-                        <img src={orlik} alt="Orlik page "/>
-                    </Front>
-                    <Back>
-                        <h3>Orlik</h3>
-                        <p>
-                            Orlik to aplikacja, dzięki której będzie można dodać, zarezerwować orlik. To przy pisaniu
-                            tej
-                            aplikacji poznawałem świat backend`u pisząc w języku PHP. W moim repozytorium można znaleźć
-                            kod
-                            pisany w JS oraz PHP. Jest to mój pierwszy samodzielny projekt.
-                        </p>
-                    </Back>
-                </ProjectContainer>
-            </Div>
-        </Wrapper>
-    )
-}
+                <MdKeyboardArrowLeft onClick={prevProjectHandler}/>
+                {currentProjectHandler()}
+                <button onClick={() => {
+                    setActive(!active)
+                }}>{active ? <MdRotateLeft /> : <MdRotateRight />}
+                    </button>
+                    <MdKeyboardArrowRight onClick={nextProjectHandler}/>
+                    </Div>
+                    </Wrapper>
+                    )
+                }

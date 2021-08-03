@@ -41,7 +41,6 @@ const Wrapper = styled.div`
 `
 
 export function App() {
-
     return (
         <>
             <GlobalStyles/>
@@ -50,7 +49,7 @@ export function App() {
                 <Header/>
                 <AboutMe/>
                 <Skills/>
-                {/*<Projects/>*/}
+                {<Projects/>}
                 <Contact/>
                 <Footer/>
             </Wrapper>
