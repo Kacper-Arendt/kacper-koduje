@@ -37,19 +37,16 @@ export const AboutMe = () => {
             <h2> O mnie</h2>
             <div>
                 <p>
-                    Mam 25 lat jestem żołnierzem oraz studentem trzeciego roku studiów inżynierskich -
+                    Mam 25 lat jestem studentem trzeciego roku studiów inżynierskich -
                     kierunek Logistyka. Programowaniem zajmuję się od roku. Przy pomocy wielu kursów internetowych
-                    solidnie
-                    przepracowałem podstawowe zagadnienia JavaScript/TypeScript. Swoją przygodę z programowaniem
-                    zacząłem od
-                    nauki HTML/CSS3 oraz PHP i MYSQL.
+                    solidnie przepracowałem podstawowe zagadnienia JavaScript/TypeScript. Swoją przygodę z
+                    programowaniem zacząłem od nauki HTML/CSS3 oraz PHP i MYSQL.
                 </p>
                 <p>
                     Po zdobyciu wystarczającej wiedzy zacząłem tworzyć własne aplikację pod skrzydłami dwójki
                     zaprzyjaźnionych programistów. Dzięki możliwości pracy w trójkę uczę się jak wykorzystywać najnowsze
                     technologie, a możliwość sprawdzanie owoców mojej pracy daje mi szansę na zrozumienie moich błędów
-                    oraz
-                    poprawę jakości kodu.
+                    oraz poprawę jakości kodu.
                 </p>
                 <p>
                     Programowanie i chęć samodoskonalenia wciągnęły mnie w takim stopniu, że postanowiłem zmienić swoje
