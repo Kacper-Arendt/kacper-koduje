@@ -23,10 +23,12 @@ const Div = styled.div`
   grid-template-columns: 5vw 80vw 5vw;
   grid-template-rows: 80vh 1fr;
   place-items: center;
+  grid-gap: 0 1rem;
 
   svg {
     font-size: 3rem;
     grid-row: 1;
+    color: rgba(255, 255, 255, .8);
 
     :first-of-type {
       grid-column: 1;
@@ -36,6 +38,15 @@ const Div = styled.div`
       grid-column: 3;
     }
 
+    :hover {
+      transform: scale(1.1);
+      color: rgba(255, 255, 255, 1);
+    }
+
+    :active {
+      transform: scale(1);
+      color: rgba(255, 255, 255, .8);
+    }
   }
 
   button {
@@ -51,6 +62,9 @@ const Div = styled.div`
     -moz-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
     box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
 
+    svg {
+      font-size: 2rem;
+    }
     :hover {
       transform: scale(1.05);
     }
