@@ -3,6 +3,7 @@ import {ProjectData} from "./UI/ProjectData";
 import {StyledWrapper} from "./UI/Wrapper";
 import {useEffect, useState} from "react";
 import {MdKeyboardArrowLeft, MdKeyboardArrowRight, MdRotateLeft, MdRotateRight} from "react-icons/md";
+import {device} from "../Models/MediaQueries";
 
 interface IProps {
     isActive: boolean;
@@ -12,13 +13,14 @@ const Wrapper = styled(StyledWrapper)`
 `
 
 const Div = styled.div`
+  margin: 2rem 0;
   padding: 1rem 0;
   perspective: 500rem;
   -moz-perspective: 500rem;
   transition: all .2s;
 
   display: grid;
-  grid-template-columns: 7vw 80vw 7vw;
+  grid-template-columns: 5vw 80vw 5vw;
   grid-template-rows: 80vh 1fr;
   place-items: center;
 
@@ -33,15 +35,16 @@ const Div = styled.div`
     :last-of-type {
       grid-column: 3;
     }
+
   }
 
   button {
     grid-column: 2;
     grid-row: 2;
-    background-color: orange;
+    background-color: rgba(0, 0, 0, .1);
     color: black;
     padding: .2rem 1rem;
-    border: none;
+    border: 2px solid black;
     cursor: pointer;
     border-radius: 5px;
     -webkit-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
@@ -56,12 +59,29 @@ const Div = styled.div`
       transform: scale(1);
     }
   }
+
+@media${device.tablet} {
+  grid-template-columns: 1fr auto;
+  grid-template-rows:  1fr;
+  grid-gap: 2rem 5rem;
+
+  svg {
+    font-size: 5rem;
+  }
+
+  button {
+    svg {
+      font-size: 3rem;
+    }
+  }
+}
 `
 
 const ProjectContainer = styled.div<IProps>`
-  position: relative;
+  grid-column: 2 /3;
+  grid-row: 1;
   width: 100%;
-  height: 85%;
+  height: 90%;
   transform-style: preserve-3d;
   transition: transform 1s;
 
@@ -69,6 +89,11 @@ const ProjectContainer = styled.div<IProps>`
   -moz-transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
   -o-transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
   transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
+
+@media${device.tablet} {
+  width: 40rem;
+  height: 50rem;
+}
 `
 
 const Side = styled.div`
@@ -81,6 +106,7 @@ const Side = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
 `
 
 const Front = styled(Side)`
@@ -101,7 +127,6 @@ const Back = styled(Side)`
 
   h3 {
     margin: 2rem 0 1rem;
-    font-size: 1.5rem;
   }
 
   p {
@@ -110,25 +135,31 @@ const Back = styled(Side)`
     line-height: 2;
     overflow: hidden;
   }
+
+@media${device.tablet} {
+  p {
+    width: 80%;
+  }
+;
+}
 `
 const Button = styled.a`
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px solid black;
-  background: transparent;
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, .1);
   color: white;
-  text-align: center;
-  font-weight: 600;
+  border: 2px solid black;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
   text-decoration: none;
   letter-spacing: 2px;
-  cursor: pointer;
   transition: all .2s;
 
   :hover {
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    transform: scale(1.1);
-    color: black;
-    border: 2px solid white;
+    transform: scale(1.05);
   }
 
   :active {
