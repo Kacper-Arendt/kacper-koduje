@@ -47,11 +47,12 @@ const Div = styled.div`
     -webkit-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
     -moz-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
     box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
-    
-    :hover{
+
+    :hover {
       transform: scale(1.05);
     }
-    :active{
+
+    :active {
       transform: scale(1);
     }
   }
@@ -95,7 +96,7 @@ const Front = styled(Side)`
 `
 const Back = styled(Side)`
   transform: rotateY(180deg);
-  background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.2), rgba(117, 19, 93, 1.7));
+  background-color: #635F47;
   text-align: center;
 
   h3 {
@@ -181,10 +182,10 @@ export const Projects = () => {
                 {currentProjectHandler()}
                 <button onClick={() => {
                     setActive(!active)
-                }}>{active ? <MdRotateLeft /> : <MdRotateRight />}
-                    </button>
-                    <MdKeyboardArrowRight onClick={nextProjectHandler}/>
-                    </Div>
-                    </Wrapper>
-                    )
-                }
+                }}>{active ? <MdRotateLeft/> : <MdRotateRight/>}
+                </button>
+                <MdKeyboardArrowRight onClick={nextProjectHandler}/>
+            </Div>
+        </Wrapper>
+    )
+}
