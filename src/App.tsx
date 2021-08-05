@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #636363, #a2ab58);
+    background: #F9F7F4;
 
   @media${device.tablet} {
     font-size: 71.25%;
