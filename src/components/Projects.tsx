@@ -11,25 +11,25 @@ interface IProps {
 
 const Wrapper = styled(StyledWrapper)`
   background-color: #fff;
-  justify-content: center;
 `
 
 const ProjectContainer = styled.div<IProps>`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, min-content);
   grid-template-areas: 
-          "h2 h2 . . ."
-          "nm nm nm nm nm"
-          "larr ab ab ab rarr"
-          "larr img img img rarr"
-          ". . ul . ."
-          " . . btn . .";
-  margin-top: 3rem;
-  place-items: center;
+          ". h2 ."
+          ".  nm  ."
+          " . ab ."
+          "larr img rarr"
+          ".  ul  ."
+          " .  btn  .";
+  gap: 1rem;
+  margin: 3rem 0;
   width: 90%;
   max-width: 100rem;
   color: black;
+  justify-items: center;
   text-align: center;
 
   h2 {
@@ -49,9 +49,9 @@ const ProjectContainer = styled.div<IProps>`
 
   img {
     grid-area: img;
-    width: 60%;
+    width: 100%;
+    height: 100%;
     max-width: 25rem;
-    border-bottom-left-radius: 1rem;
   }
 
   svg {
@@ -65,6 +65,17 @@ const ProjectContainer = styled.div<IProps>`
     :last-of-type {
       grid-area: rarr;
     }
+
+    :hover {
+      :first-of-type, :last-of-type {
+        color: orange;
+      }
+
+      :active {
+        :first-of-type, :last-of-type {
+        }
+      }
+    }
   }
 
 @media${device.laptop} {
@@ -77,28 +88,29 @@ const ProjectContainer = styled.div<IProps>`
           ". ul . img img . "
           " . ul . . btn . "
           "larr . . .  . rarr";
-}
 
-  img{
-    height: 100%;
-    width: 100%;
+  img {
+    border-bottom-left-radius: 1rem;
   }
+
   h2 {
     text-align: center;
+    margin-bottom: 3rem;
+    font-size: 3rem;
   }
 
   h3 {
     place-self: start;
   }
-  
-  p{
+
+  p {
     place-self: start;
     width: 70%;
   }
+}
 `
 const Technologies = styled.ul`
   grid-area: ul;
-  margin: 1rem 0;
   font-size: 1.5rem;
   text-align: left;
 
@@ -117,18 +129,27 @@ const Technologies = styled.ul`
 `
 const Button = styled.a`
   grid-area: btn;
-  margin: 1rem 0 2rem;
   background-color: #1F3A60;
   color: white;
   cursor: pointer;
   padding: 1rem;
-  border-radius: 2px;
   text-decoration: none;
-  
+  transition: all .4s;
+  font-weight: bold;
+  text-transform: capitalize;
+
+  :hover {
+    background-color: white;
+    color: black;
+    outline: 2px solid black;
+  }
+
+  &:active {
+    letter-spacing: 2px;
+  }
 `
 
 export const Projects = () => {
-    const [active, setActive] = useState(false);
     const [currentProject, setCurrentProject] = useState(0);
 
     const nextProjectHandler = () => {
