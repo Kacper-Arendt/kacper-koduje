@@ -4,26 +4,25 @@ import {device} from "../Models/MediaQueries";
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
+  margin: 3rem 0;
+
 `
 
 const Div = styled.div`
-  margin: 3rem 0;
+  margin: 1rem 0;
   width: 80%;
   max-width: 110rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgba(0, 0, 0, .6);
-  border: .2rem solid black;
-  border-radius: 5rem;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+  background-color: white;
 
 
   h3 {
     flex: 1 100%;
     text-align: center;
-    margin: 2rem 0;
-    color: #e0ba22;
+    padding: 2rem 0 2rem;
+    color: black;
 
     :last-of-type {
       margin-top: .5rem;
@@ -38,21 +37,21 @@ const IconContainer = styled.div`
   justify-content: center;
   width: 30%;
   align-items: center;
-
   :hover {
     color: orange;
   }
 
   p {
     margin: 1rem 0;
+    color: black;
     font-weight: 700;
   }
 
   svg {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     transition: all .3s;
-    margin: 1rem 0 0;
+    margin: 1.5rem 0 0;
 
     :hover {
       transform: scale(1.2);
@@ -62,11 +61,10 @@ const IconContainer = styled.div`
 
 @media${device.laptop} {
   svg {
-    width: 7rem;
-    height: 7rem;
+    width: 6rem;
+    height: 6rem;
   }
-}
-@media${device.laptop} {
+} @media${device.laptop} {
   width: 25%;
   margin: 3rem 0;
 }
@@ -75,9 +73,8 @@ const IconContainer = styled.div`
 export const Skills = () => {
     return (
         <Wrapper>
-            <h2>Umiejętności</h2>
             <Div id='skills'>
-                <h3>Technologie których używam</h3>
+                <h3>Technologies that I use</h3>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#javascript'}/>
@@ -120,7 +117,10 @@ export const Skills = () => {
                     </svg>
                     <p>Node</p>
                 </IconContainer>
-                <h3>Technologie które znam</h3>
+            </Div>
+
+            <Div>
+                <h3>Technologies that I learned</h3>
                 <IconContainer>
                     <svg>
                         <use href={icons + '#php'}/>
