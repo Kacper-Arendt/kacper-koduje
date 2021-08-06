@@ -127,7 +127,7 @@ const Technologies = styled.ul`
   }
 
 `
-const Button = styled.a`
+export const Button = styled.a`
   grid-area: btn;
   background-color: #1F3A60;
   color: white;
@@ -178,7 +178,7 @@ export const Projects = () => {
                 <Technologies>
                     {ProjectData[currentProject].technologies.map(el => {
                         return (
-                            <li><MdCheckCircle/>{el}</li>
+                            <li key={el}><MdCheckCircle/>{el}</li>
                         )
                     })}
                 </Technologies>
