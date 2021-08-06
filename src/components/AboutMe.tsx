@@ -1,40 +1,63 @@
 import styled from "styled-components";
 import {StyledWrapper} from "./UI/Wrapper";
 import {device} from "../Models/MediaQueries";
+import {me} from '../images/Images'
 
 const Div = styled(StyledWrapper)`
   div {
-    width: 85%;
+    width: 80%;
     max-width: 100rem;
-    margin: 3rem 0;
-
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, .6);
-    border: .2rem solid black;
-    border-radius: 5rem;
     align-items: center;
+    color: black;
+  }
+
+  h2 {
+    width: 80%;
+    margin-top: 2rem;
   }
 
   p {
-    margin: 2rem;
+    margin: 1rem 0;
     line-height: 1.8;
     letter-spacing: 1.7px;
-    text-align: center;
+
+    :first-of-type {
+      margin: 0;
+    }
   }
 
-@media${device.desktop} {
+@media${device.tablet} {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+
+  div {
+    width: 50%;
+
+    :nth-of-type(2) {
+      width: 35%;
+      margin-left: 2rem;
+      background-image: url(${me});
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: 65%;
+    }
+  }
+
+} @media${device.desktop} {
   p {
     line-height: 1.5;
   }
 }
-
 `
 
 export const AboutMe = () => {
     return (
         <Div id='aboutMe'>
-            <h2> O mnie</h2>
+            <h2>About</h2>
             <div>
                 <p>
                     Mam 25 lat jestem studentem trzeciego roku studiów inżynierskich -
@@ -55,7 +78,8 @@ export const AboutMe = () => {
                     developer.
                 </p>
             </div>
-
+            <div>
+            </div>
         </Div>
     )
 }
