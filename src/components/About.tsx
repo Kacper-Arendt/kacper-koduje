@@ -4,19 +4,32 @@ import {device} from "../Models/MediaQueries";
 import {me} from '../images/Images'
 
 const Div = styled(StyledWrapper)`
-  div {
-    width: 80%;
-    max-width: 100rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: black;
-  }
-
   h2 {
     width: 80%;
     margin-top: 2rem;
   }
+
+@media${device.tablet} {
+  display: grid;
+  max-width: 150rem;
+  grid-template-rows: 10rem min-content;
+  grid-template-columns: 1fr minmax(55%, 30rem) minmax(35%, 15rem) 1fr;
+  grid-template-areas: 
+      ". header . ."
+      ". text img .";
+  place-self: center;
+  grid-column-gap: 2rem;
+  h2 {
+    grid-area: header;
+  }
+}
+`
+
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: black;
+  grid-area: text;
 
   p {
     margin: 1rem 0;
@@ -27,38 +40,23 @@ const Div = styled(StyledWrapper)`
       margin: 0;
     }
   }
-
-@media${device.tablet} {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: stretch;
-
-  div {
-    width: 50%;
-
-    :nth-of-type(2) {
-      width: 35%;
-      margin-left: 2rem;
-      background-image: url(${me});
-      background-repeat: no-repeat;
-      background-size: auto 100%;
-      background-position: 65%;
-    }
-  }
-
-} @media${device.desktop} {
-  p {
-    line-height: 1.5;
-  }
-}
 `
+const Image = styled.div`
+  grid-area: img;
+  height: 100%;
+  width: 100%;
+  background-image: url(${me});
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+`
+
 
 export const About = () => {
     return (
         <Div id='about'>
             <h2>About</h2>
-            <div>
+            <Text>
                 <p>
                     I’m 25 years old, and a third-year student of engineering studies in the field of logistics. I have
                     been programming for over a year. With the help of many online courses, I have mastered the basics
@@ -76,9 +74,9 @@ export const About = () => {
                     developer.</b>
 
                 </p>
-            </div>
-            <div>
-            </div>
+            </Text>
+            <Image>
+            </Image>
         </Div>
     )
 }
