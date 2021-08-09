@@ -147,10 +147,10 @@ export const Contact = () => {
             if (templateId && userID && serviceID) {
                 const send = await sendForm(serviceID, templateId, e.target, userID);
                 if (send.status === 200)
-                    setMessage("Zrobione!");
+                    setMessage("Done!");
             }
         } catch (err) {
-            setMessage('Coś poszło nie tak');
+            setMessage('Something went wrong...');
         } finally {
             setLoading(false);
             setTimeout(() => {
