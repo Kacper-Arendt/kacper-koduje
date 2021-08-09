@@ -54,28 +54,27 @@ const Div = styled(StyledWrapper)`
 }
 `
 
-export const AboutMe = () => {
+export const About = () => {
     return (
-        <Div id='aboutMe'>
+        <Div id='about'>
             <h2>About</h2>
             <div>
                 <p>
-                    Mam 25 lat jestem studentem trzeciego roku studiów inżynierskich -
-                    kierunek Logistyka. Programowaniem zajmuję się od roku. Przy pomocy wielu kursów internetowych
-                    solidnie przepracowałem podstawowe zagadnienia JavaScript/TypeScript. Swoją przygodę z
-                    programowaniem zacząłem od nauki HTML/CSS3 oraz PHP i MYSQL.
+                    I’m 25 years old, and a third-year student of engineering studies in the field of logistics. I have
+                    been programming for over a year. With the help of many online courses, I have mastered the basics
+                    of JavaScript and TypeScript. I started my programming adventure with HTML/CSS, Php and MySQL.
                 </p>
                 <p>
-                    Po zdobyciu wystarczającej wiedzy zacząłem tworzyć własne aplikację pod skrzydłami dwójki
-                    zaprzyjaźnionych programistów. Dzięki możliwości pracy w trójkę uczę się jak wykorzystywać najnowsze
-                    technologie, a możliwość sprawdzanie owoców mojej pracy daje mi szansę na zrozumienie moich błędów
-                    oraz poprawę jakości kodu.
+                    After gaining sufficient knowledge, I started to create my own application under the wings of two
+                    friendly developers. The opportunity to work in a team allows me to discover the latest
+                    technologies. Understanding what I am doing wrong gives me an opportunity to improve the quality of
+                    my code.
                 </p>
                 <p>
-                    Programowanie i chęć samodoskonalenia wciągnęły mnie w takim stopniu, że postanowiłem zmienić swoje
-                    życie zawodowe i spróbować swoich sił w branży IT, dlatego szukam pracy lub stażu jako junior
-                    front-end
-                    developer.
+                    Programming and the desire for self-improvement absorbed me to such an extent that I decided to
+                    change my professional life. <b> I am looking for a job or internship as a junior front-end
+                    developer.</b>
+
                 </p>
             </div>
             <div>

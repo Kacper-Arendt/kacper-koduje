@@ -84,17 +84,18 @@ export const Navigation = (props: MenuIProps) => {
 
     return (
         <Nav isOpen={props.isOpen}>
-            <StyledLink to='header' smooth='easeOutCubic' spy={true} delay={500}
-                        onClick={props.setIsOpen}>Początek</StyledLink>
-            <StyledLink to='aboutMe' smooth='easeOutCubic' spy={true} delay={500} onClick={props.setIsOpen}
-                        offset={-60}>O
-                mnie</StyledLink>
+            <StyledLink to='about' smooth='easeOutCubic' spy={true} delay={500} onClick={props.setIsOpen}
+                        offset={-60}>About
+            </StyledLink>
             <StyledLink to='skills' smooth='easeOutCubic' spy={true} delay={500}
-                        onClick={props.setIsOpen} offset={-160}>Umiejętności</StyledLink>
+                        onClick={props.setIsOpen} offset={-60}>Skills
+            </StyledLink>
             <StyledLink to='projects' smooth='easeOutCubic' spy={true} delay={500}
-                        onClick={props.setIsOpen}>Projekty</StyledLink>
+                        onClick={props.setIsOpen}>Projects
+            </StyledLink>
             <StyledLink to='contact' smooth='easeOutCubic' spy={true} delay={500}
-                        onClick={props.setIsOpen}>Kontakt</StyledLink>
+                        onClick={props.setIsOpen}>Contact
+            </StyledLink>
             <Logo>
                 <img src={logo} alt=""/>
             </Logo>
