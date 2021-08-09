@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "../Models/MediaQueries"
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -14,6 +15,11 @@ const StyledFooter = styled.footer`
     margin: .7rem 0;
     color:  #C5C5C5;
   }
+
+@media${device.tablet} {
+  font-size: 1.3rem;
+  padding: 2.5rem 3.5rem;
+}
 `
 
 const Contact = styled.div`
@@ -24,6 +30,8 @@ const Contact = styled.div`
 `
 
 const Social = styled.div`
+  display: flex;
+  flex-flow: column;
   p {
     :first-of-type{
       font-weight: bold;
@@ -32,6 +40,7 @@ const Social = styled.div`
   }
 
   a {
+    margin-top: .5rem;
     text-decoration: none;
     color: white;
     transition: all .3s;
@@ -65,6 +74,9 @@ export const Footer = () => {
                 <p>Find Me</p>
                 <a href="https://github.com/kacykvaa" target="_blank" rel="noopener noreferrer">
                     Github
+                </a>
+                <a href="https://www.linkedin.com/in/kacper-arendt/" target="_blank" rel="noopener noreferrer">
+                    Linkedin
                 </a>
             </Social>
             <Line />
