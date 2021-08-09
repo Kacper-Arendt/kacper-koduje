@@ -1,5 +1,5 @@
 export * from './Skills';
-export * from './AboutMe';
+export * from './About';
 export * from './Contact';
 export * from './Footer';
 export * from './Header';

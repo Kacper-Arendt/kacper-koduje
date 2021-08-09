@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 
-import {AboutMe, Skills, Contact, Footer, Header, Projects, Menu} from "./components/Componets";
+import {About, Skills, Contact, Footer, Header, Projects, Menu} from "./components/Componets";
 import {device} from './Models/MediaQueries';
 
 const GlobalStyles = createGlobalStyle`
@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #636363, #a2ab58);
+    background: #F9F7F4;
 
   @media${device.tablet} {
     font-size: 71.25%;
@@ -47,7 +47,7 @@ export function App() {
             <Menu/>
             <Wrapper>
                 <Header/>
-                <AboutMe/>
+                <About/>
                 <Skills/>
                 {<Projects/>}
                 <Contact/>

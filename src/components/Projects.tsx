@@ -1,208 +1,157 @@
 import styled from "styled-components"
 import {ProjectData} from "./UI/ProjectData";
 import {StyledWrapper} from "./UI/Wrapper";
-import {useEffect, useState} from "react";
-import {MdKeyboardArrowLeft, MdKeyboardArrowRight, MdRotateLeft, MdRotateRight} from "react-icons/md";
+import {useState} from "react";
+import {MdKeyboardArrowLeft, MdKeyboardArrowRight, MdCheckCircle} from "react-icons/md";
 import {device} from "../Models/MediaQueries";
 
 interface IProps {
-    isActive: boolean;
+    isActive?: boolean;
 }
 
 const Wrapper = styled(StyledWrapper)`
-`
-
-const Div = styled.div`
-  margin: 2rem 0;
-  padding: 1rem 0;
-  perspective: 500rem;
-  -moz-perspective: 500rem;
-  transition: all .2s;
-
-  display: grid;
-  grid-template-columns: 5vw 80vw 5vw;
-  grid-template-rows: 80vh 1fr;
-  place-items: center;
-  grid-gap: 0 1rem;
-
-  svg {
-    font-size: 3rem;
-    grid-row: 1;
-    color: rgba(255, 255, 255, .8);
-
-    :first-of-type {
-      grid-column: 1;
-    }
-
-    :last-of-type {
-      grid-column: 3;
-    }
-
-    :hover {
-      transform: scale(1.1);
-      color: rgba(255, 255, 255, 1);
-    }
-
-    :active {
-      transform: scale(1);
-      color: rgba(255, 255, 255, .8);
-    }
-  }
-
-  button {
-    grid-column: 2;
-    grid-row: 2;
-    background-color: rgba(0, 0, 0, .1);
-    color: black;
-    padding: .2rem 1rem;
-    border: 2px solid black;
-    cursor: pointer;
-    border-radius: 5px;
-    -webkit-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
-    -moz-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
-    box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
-
-    svg {
-      font-size: 2rem;
-    }
-    :hover {
-      transform: scale(1.05);
-    }
-
-    :active {
-      transform: scale(1);
-    }
-  }
-
-@media${device.tablet} {
-  grid-template-columns: 1fr auto;
-  grid-template-rows:  1fr;
-  grid-gap: 2rem 5rem;
-
-  svg {
-    font-size: 5rem;
-  }
-
-  button {
-    svg {
-      font-size: 3rem;
-    }
-  }
-}
+  background-color: #fff;
 `
 
 const ProjectContainer = styled.div<IProps>`
-  grid-column: 2 /3;
-  grid-row: 1;
-  width: 100%;
-  height: 90%;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-
-  -webkit-transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
-  -moz-transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
-  -o-transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
-  transform: ${(props) => props.isActive ? "rotateY(180deg)" : "none"};
-
-@media${device.tablet} {
-  width: 40rem;
-  height: 50rem;
-}
-`
-
-const Side = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  background-color: orange;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-const Front = styled(Side)`
-  justify-self: center;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: fill;
-  }
-
-
-`
-const Back = styled(Side)`
-  transform: rotateY(180deg);
-  background-color: #635F47;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, min-content);
+  grid-template-areas: 
+          ". h2 ."
+          ".  nm  ."
+          " . ab ."
+          "larr img rarr"
+          ".  ul  ."
+          " .  btn  .";
+  gap: 1rem;
+  margin: 3rem 0;
+  width: 90%;
+  max-width: 100rem;
+  color: black;
+  justify-items: center;
   text-align: center;
 
+  h2 {
+    grid-area: h2;
+  }
+
   h3 {
-    margin: 2rem 0 1rem;
+    grid-area: nm;
   }
 
   p {
-    padding: 1rem 2rem;
-    letter-spacing: 2px;
-    line-height: 2;
+    grid-area: ab;
+    letter-spacing: 1.7px;
+    line-height: 1.5;
     overflow: hidden;
   }
 
-@media${device.tablet} {
-  p {
-    width: 80%;
+  img {
+    grid-area: img;
+    width: 100%;
+    height: 100%;
+    max-width: 25rem;
   }
-;
+
+  svg {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 1);
+
+    :first-of-type {
+      grid-area: larr;
+    }
+
+    :last-of-type {
+      grid-area: rarr;
+    }
+
+    :hover {
+      :first-of-type, :last-of-type {
+        color: orange;
+      }
+
+      :active {
+        :first-of-type, :last-of-type {
+        }
+      }
+    }
+  }
+
+@media${device.laptop} {
+  text-align: left;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+          "h2 h2 . . . ."
+          ". nm . img img ."
+          ". ab ab img img . "
+          ". ul . img img . "
+          " . ul . . btn . "
+          "larr . . .  . rarr";
+
+  img {
+    border-bottom-left-radius: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+  }
+
+  h3 {
+    place-self: start;
+  }
+
+  p {
+    place-self: start;
+    width: 70%;
+  }
 }
 `
-const Button = styled.a`
-  margin-top: 1rem;
-  background-color: rgba(0, 0, 0, .1);
-  color: white;
-  border: 2px solid black;
-  cursor: pointer;
-  padding: 1rem;
-  border-radius: 5px;
-  -webkit-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
-  -moz-box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
-  box-shadow: 8px 8px 24px 0 rgba(66, 68, 90, 1);
-  text-decoration: none;
-  letter-spacing: 2px;
-  transition: all .2s;
+const Technologies = styled.ul`
+  grid-area: ul;
+  font-size: 1.5rem;
+  text-align: left;
 
-  :hover {
-    transform: scale(1.05);
+  li {
+    margin: .3rem;
+    flex: 1 30%;
+    list-style: none;
+    white-space: nowrap;
   }
 
-  :active {
-    transform: scale(1);
+  svg {
+    margin-right: .5rem;
+    font-size: 1em;
+  }
+
+`
+export const Button = styled.a`
+  grid-area: btn;
+  background-color: #1F3A60;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all .4s;
+  font-weight: bold;
+  text-transform: capitalize;
+
+  :hover {
+    background-color: white;
+    color: black;
+    outline: 2px solid black;
+  }
+
+  &:active {
+    letter-spacing: 2px;
   }
 `
 
 export const Projects = () => {
-    const [active, setActive] = useState(false);
     const [currentProject, setCurrentProject] = useState(0);
 
-    useEffect(() => {
-        currentProjectHandler();
-    }, [currentProject])
-
-    const currentProjectHandler = () => {
-        return (
-            <ProjectContainer isActive={active} key={ProjectData[currentProject].id}>
-                <Front>
-                    <img src={ProjectData[currentProject].img} alt={ProjectData[currentProject].alt}/>
-                </Front>
-                <Back>
-                    <h3>{ProjectData[currentProject].name}</h3>
-                    <p>{ProjectData[currentProject].description}</p>
-                    <Button href={ProjectData[currentProject].link} target="_blank"
-                            rel="noopener noreferrer">Zobacz</Button>
-                </Back>
-            </ProjectContainer>
-        )
-    }
     const nextProjectHandler = () => {
         if (currentProject < 3) {
             setCurrentProject(currentProject + 1);
@@ -220,16 +169,23 @@ export const Projects = () => {
 
     return (
         <Wrapper id='projects'>
-            <h2>Projekty</h2>
-            <Div>
+            <ProjectContainer key={ProjectData[currentProject].id}>
+                <h2>Projects</h2>
                 <MdKeyboardArrowLeft onClick={prevProjectHandler}/>
-                {currentProjectHandler()}
-                <button onClick={() => {
-                    setActive(!active)
-                }}>{active ? <MdRotateLeft/> : <MdRotateRight/>}
-                </button>
+                <h3>{ProjectData[currentProject].name}</h3>
+                {<p>{ProjectData[currentProject].description}</p>}
+                <img src={ProjectData[currentProject].img} alt={ProjectData[currentProject].alt}/>
+                <Technologies>
+                    {ProjectData[currentProject].technologies.map(el => {
+                        return (
+                            <li key={el}><MdCheckCircle/>{el}</li>
+                        )
+                    })}
+                </Technologies>
+                <Button href={ProjectData[currentProject].link} target="_blank"
+                        rel="noopener noreferrer">Try this app</Button>
                 <MdKeyboardArrowRight onClick={nextProjectHandler}/>
-            </Div>
+            </ProjectContainer>
         </Wrapper>
     )
 }

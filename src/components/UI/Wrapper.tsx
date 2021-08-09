@@ -10,17 +10,13 @@ export const StyledWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
   h2 {
-    background: rgba(0, 0, 0, .3);
     width: 100%;
     height: 4rem;
-    line-height: 4rem;
-    text-align: center;
     font-size: 2rem;
-    flex: 1 100%;
+    color: black;
+
   }
-  
   h2{
     font-size: 1.5rem;
   }

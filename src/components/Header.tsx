@@ -1,6 +1,7 @@
 import styled, {keyframes} from "styled-components";
 import {logo, bikepacking} from '../images/Images'
 import {StyledWrapper} from "./UI/Wrapper";
+import {device} from "../Models/MediaQueries";
 
 const showLogo = keyframes`
   0% {
@@ -25,9 +26,13 @@ const rotate = keyframes`
 `
 
 const StyledHeader = styled(StyledWrapper)`
-  height: 100vh;
+  height: 90vh;
   justify-content: center;
   background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(77, 77, 77, .3)), url(${bikepacking});
+
+@media${device.tablet} {
+  margin-top: 5rem;
+}
 `
 
 const LogoContainer = styled.div`
@@ -60,7 +65,7 @@ const LogoContainer = styled.div`
     width: 96%;
     position: absolute;
     background-color: #1c1b29;
-    border-raditabletus: .5rem;
+    border-radius: .5rem;
     top: 2%;
     left: 2%;
   }

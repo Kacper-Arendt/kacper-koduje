@@ -1,221 +1,134 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {sendForm} from 'emailjs-com';
-import {
-    AiOutlineUser,
-    AiOutlineMail,
-    AiOutlinePhone,
-    AiOutlineFacebook,
-    AiOutlineGithub,
-    AiOutlineHome
-} from "react-icons/ai";
 import {Spinner} from "./UI/Spinner";
 import {StyledWrapper} from "./UI/Wrapper";
 import {device} from "../Models/MediaQueries";
 
 const Wrapper = styled(StyledWrapper)`
-@media${device.laptopL} {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  margin: 2rem 0;
-}
 `
 
-const FlexItem = styled.div`
+const Div = styled.div`
   width: 80%;
-  height: 100%;
   max-width: 60rem;
-  margin: 2rem 2rem 1rem;
-  background-color: rgba(0, 0, 0, .6);
-
-@media${device.laptopL} {
-  width: 45%;
-  height: 20rem;
-}
-`
-
-const ContactData = styled(FlexItem)`
+  margin: 3rem;
+  padding: 2rem 0 0;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  padding: .5rem;
-
-@media${device.mobileM} {
-  flex-direction: row;
-  justify-content: space-between;
-}
-`
-const Form = styled(FlexItem)`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(7, 1fr);
   place-items: center;
 
   h3 {
-    grid-column: 1 /-1;
-    grid-row: 1;
-    margin: 1rem 0;
-    text-align: center;
-    line-height: 1.5;
+    color: black;
+    text-align: start;
+    font-size: 1.5rem;
   }
+
+@media${device.tablet} {
+  flex-flow: row wrap;
+  place-items: flex-start;
+
+  h3 {
+    flex: 1 100%;
+    margin-left: 3rem;
+  }
+}
+`
+const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
 
   input, textarea {
-    background-color: grey;
-    color: #e0ba22;
-    padding: .5rem;
+    outline: none;
+    border-radius: 5px;
 
     :hover {
-      outline: 1px solid #e0ba22;
+      transform: scale(1.01);
     }
 
-    :focus {
-      outline: .2rem solid #e0ba22;
-    }
-
-    ::placeholder {
-      color: white;
+    :active, :focus {
+      border: 2px solid orange;
     }
   }
 
-  p {
-    grid-column: 1 /-1;
-    grid-row: 7;
+  span {
+    color: black;
+    margin: 1rem 0 0;
+    text-align: center;
   }
 
-@media${device.laptop} {
-  grid-template-rows: repeat(4, 1fr);
-  padding-bottom: 1rem;
+@media${device.tablet} {
+  width: 70%;
+  flex-flow: row wrap;
+  margin-left: 3rem;
 
-  p {
-    grid-column: 3 /-1;
-    grid-row: 4;
-  }
-} @media${device.laptopL} {
-  input {
+  span {
+    margin: 0 0 0 2rem;
     font-size: 1.3rem;
   }
-
-  textarea {
-    font-size: 1rem;
-  }
-}
-`
-
-const Data = styled.div`
-  display: flex;
-  flex-direction: column;
-
-@media${device.laptopL} {
-  justify-content: center;
-}
-`
-
-const Element = styled.div`
-  display: flex;
-  margin: .5rem 0;
-
-  p {
-    margin-left: .5rem;
-    white-space: nowrap;
-
-    :first-of-type {
-      color: #e0ba22;
-    }
-  }
-
-@media${device.laptopL} {
-  margin: 1rem 0;
-}
-`
-const Social = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all .4s ease-in-out;
-
-  svg {
-    font-size: 5rem;
-    fill: grey;
-    background-color: rgba(0, 0, 0, .3);
-    margin: .5rem;
-
-    :hover {
-      transform: scale(1.05);
-      fill: white;
-    }
-
-    :active {
-      transform: scale(1);
-    }
-  }
-
-@media${device.mobileM} {
-  svg {
-    font-size: 7rem;
-  }
-} @media${device.laptopL} {
-  flex-direction: column;
 }
 `
 const TextArea = styled.textarea`
-  grid-column: 1 /  -1;
-  grid-row: 4 / span 2;
   width: 80%;
-  max-width: 40rem;
-  height: 90%;
+  height: 10rem;
+  margin: 1rem 0;
+  padding: .5rem;
   overflow: hidden;
+  border: 1px solid black;
 
-@media${device.laptop} {
-  grid-column: 3 / -1;
-  grid-row: 2 / 4;
+@media${device.tablet} {
+  width: 100%;
+  border: 2px solid black;
 }
 `
 const Input = styled.input`
   width: 80%;
   max-width: 40rem;
-  grid-column: 1 / -1;
   margin: 1rem 0;
+  padding: .5rem;
+  border: 1px solid black;
+
+@media${device.tablet} {
+  width: 45%;
+  padding: 1rem .5rem;
+  border: 2px solid black;
 
   :first-of-type {
-    grid-row: 2;
+    margin-right: auto;
   }
-
-  :nth-of-type(2) {
-    grid-row: 3;
-  }
-
-@media${device.laptop} {
-  grid-column: 1 /3;
 }
 `
-const Button = styled.button`
-  grid-column: 2 / span 2;
-  grid-row: 6;
-  border: .2rem solid orange;
-  transition: all .2s;
-  padding: .7rem 1rem;
-  background: transparent;
-  color: white;
-  letter-spacing: 2px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
+const ButtonEl = styled.button`
+  place-self: center;
+  margin: 1rem 0 .5rem;
+  padding: 1rem 2rem;
+  transition: all .4s;
 
-  :hover {
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #1F3A60;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  text-transform: capitalize;
+
+  :hover, :focus {
+    background-color: #192e4d;
     transform: scale(1.05);
-    color: orange;
-    border-color: white;
   }
 
   :active {
     transform: scale(1);
   }
 
-@media${device.laptop} {
-  grid-row: 4;
+@media${device.tablet} {
+  place-self: flex-start;
+  margin: 1rem 0;
 }
 `
 
@@ -237,7 +150,7 @@ export const Contact = () => {
                     setMessage("Zrobione!");
             }
         } catch (err) {
-            setMessage('Coś poszło nie tak')
+            setMessage('Coś poszło nie tak');
         } finally {
             setLoading(false);
             setTimeout(() => {
@@ -248,44 +161,17 @@ export const Contact = () => {
 
     return (
         <Wrapper id="contact">
-            <h2>Skontaktuj się ze mną</h2>
-            <ContactData>
-                <Data>
-                    <Element>
-                        <p><AiOutlineUser/></p>
-                        <p>Kacper Arendt</p>
-                    </Element>
-                    <Element>
-                        <p><AiOutlineMail/></p>
-                        <p>arendtkacper@gmail.com</p>
-                    </Element>
-                    <Element>
-                        <p><AiOutlinePhone/></p>
-                        <p>721-446-865</p>
-                    </Element>
-                    <Element>
-                        <p><AiOutlineHome/></p>
-                        <p>Warszawa</p>
-                    </Element>
-                </Data>
-                <Social>
-                    <a href="https://www.facebook.com/kacper.arendt.5" target="_blank" rel="noopener noreferrer">
-                        <AiOutlineFacebook/>
-                    </a>
-                    <a href="https://github.com/kacykvaa" target="_blank" rel="noopener noreferrer">
-                        <AiOutlineGithub/>
-                    </a>
-                </Social>
-            </ContactData>
-            <Form onSubmit={handleSubmit}>
-                <h3>Nie czekaj, napisz do mnie już teraz!</h3>
-                <Input type="name" autoComplete="given-name" name="name" placeholder="Imię..."/>
-                <Input type="email" name='email' placeholder='Mail...'/>
-                <TextArea name='message' placeholder="Twoja wiadomość..."/>
-                <Button>Wyślij</Button>
-                {loading && <p><Spinner/></p>}
-                {message && <p>{message}</p>}
-            </Form>
+            <Div>
+                <h3>Contact Me</h3>
+                <Form onSubmit={handleSubmit}>
+                    <Input type="name" autoComplete="given-name" name="name" placeholder="Enter your name here..."/>
+                    <Input type="email" name='email' placeholder='Enter your email here...'/>
+                    <TextArea name='message' placeholder="Your message..."/>
+                    <ButtonEl>Send</ButtonEl>
+                    {loading && <span><Spinner/></span>}
+                    {message && <span>{message}</span>}
+                </Form>
+            </Div>
         </Wrapper>
     )
 }

@@ -5,6 +5,7 @@ interface IProject {
     name: string,
     link: string,
     description: string,
+    technologies: Array<string>,
     img: string,
     alt: string,
 }
@@ -15,40 +16,40 @@ export const ProjectData: Array<IProject> = [
         name: "QuizLab",
         img: quizLab,
         alt: "Game page from quiz lab",
-        link: "https://kacykvaa.github.io/quiz-lab/#/",
-        description: `Aplikacja dzięki której można poszerzać swoją wiedzę z zakresu frontendu. Użytkownik może zagrać 
-            bez konieczności rejestracji. Przy tworzeniu korzystałem z takich technologii jak TypeScript,React, Redux,
-             StyledComponents. Do stworzenia bazy danych oraz autoryzacji użytkowników użyłem platformy Firebase.`,
+        link: "https://kacper-arendt.github.io/quiz-lab/",
+        description: `An application that allows users to test their knowledge of the frontend. The user can play 
+        without registration. I used the Firebase platform to create the database and authorize users.`,
+        technologies: ['TypeScript', 'React', 'Redux', 'StyledComponents']
     },
     {
         id: 1,
         name: "Weather State",
         img: weatherState,
         alt: "Weather state page",
-        link: "https://kacykvaa.github.io/Weather-State/",
-        description: ` Aplikacja umożliwia sprawdzenie pogody w dowolnym mieście na ziemi. W menu miasta istnieje
-            możliwość dodania do listy ulubionych. Wszystkie ulubione miasta ładują się automatycznie.
-            Dane pogodowe pobierane są z serwisu OpenWeatherMap. Do napisania Weather State użyłem
-            TypeScript, React, Redux i StyledComponents.`
+        link: "https://kacper-arendt.github.io/Weather-State/",
+        description: `The application allows users to check the weather anywhere on earth. In the city menu, user can
+         add a city to the favorites list. All favorite cities are loaded automatically. Weather data comes from 
+         OpenWeatherMap.`,
+        technologies: ['TypeScript', 'React', 'Redux', 'StyledComponents']
     },
     {
         id: 2,
         name: "TodoApp",
         img: todoApp,
         alt: "Todo app page",
-        link: "https://kacykvaa.github.io/Todo-App/",
-        description: ` TodoApp to bardzo prosta aplikacja, która służy do tworzenia listy zadań. Był to pierwszy
-            projekt, który napisałem w TypeScripcie. TodoApp powstała przy pomocy Reacta, Reduxa i
-            StyledComponents`,
+        link: "https://kacper-arendt.github.io/Todo-App/",
+        description: `The Todo App is a simple application that is used to create a to-do list. This is the first 
+        project I've ever written in TypeScript.`,
+        technologies: ['TypeScript', 'React', 'Redux', 'StyledComponents']
     },
     {
         id: 3,
         name: "Orlik",
         img: orlik,
         alt: "Orlik page",
-        link: 'https://github.com/kacykvaa/OrlikApi-Front-',
-        description:`Orlik to aplikacja, dzięki której będzie można dodać, zarezerwować orlik. Przy pisaniu
-             tej aplikacji poznawałem świat backendu pisząc w języku PHP. W moim repozytorium można znaleźć
-             kod pisany w JS oraz PHP. Jest to mój pierwszy samodzielny projekt.`,
+        link: 'https://github.com/Kacper-Arendt/OrlikApi-Front-',
+        description: `Orlik is an application that will allow users to add or reserve a pitch. When creating this 
+        application, I took my first steps in Php. Orlik was created in JS and PHP. This is my first independent project.`,
+        technologies: ['React', 'Symfony', 'MySQL', 'CSS Modules']
     }
 ]

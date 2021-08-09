@@ -41,8 +41,8 @@ export const Burger = styled.button<MenuIProps>`
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-    background-color: white;
-
+    background-color: orange;
+    
     :first-child {
       transform: ${(props: MenuIProps) => props.isOpen ? 'rotate(45deg) ' : 'rotate(0)'};
     }
@@ -73,7 +73,7 @@ export const Burger = styled.button<MenuIProps>`
     width: 4.5rem;
     height: .45rem;
   }
-} @media${device.laptopL} {
+} @media${device.laptop} {
   display: none;
 }
 `;
