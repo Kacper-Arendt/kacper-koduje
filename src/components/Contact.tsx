@@ -39,7 +39,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   place-items: center;
-  padding-bottom: 3rem;
 
   input, textarea {
     outline: none;
@@ -73,7 +72,6 @@ const Form = styled.form`
 `
 const TextArea = styled.textarea`
   width: 80%;
-  max-width: 40rem;
   height: 10rem;
   margin: 1rem 0;
   padding: .5rem;
@@ -94,7 +92,7 @@ const Input = styled.input`
 
 @media${device.tablet} {
   width: 45%;
-  padding: 1rem;
+  padding: 1rem .5rem;
   border: 2px solid black;
 
   :first-of-type {
