@@ -10,7 +10,6 @@ export const StyledWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
   h2 {
     width: 100%;
     height: 4rem;

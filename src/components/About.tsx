@@ -82,7 +82,6 @@ export const About = () => {
                     Programming and the desire for self-improvement absorbed me to such an extent that I decided to
                     change my professional life. <b> I am looking for a job or internship as a junior front-end
                     developer.</b>
-
                 </p>
             </Text>
             <Image>

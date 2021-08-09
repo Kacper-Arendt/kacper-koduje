@@ -47,7 +47,7 @@ const StyledLink = styled(Link)`
     color: orange;
   }
 
-@media${device.tablet} {
+@media${device.laptop} {
   padding: 1rem;
   font-size: 1.5rem;
 

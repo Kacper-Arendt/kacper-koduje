@@ -4,68 +4,134 @@ import {sendForm} from 'emailjs-com';
 import {Spinner} from "./UI/Spinner";
 import {StyledWrapper} from "./UI/Wrapper";
 import {device} from "../Models/MediaQueries";
-import { Button } from "./Projects";
 
 const Wrapper = styled(StyledWrapper)`
 `
 
-const Form = styled.div`
+const Div = styled.div`
   width: 80%;
-  height: 100%;
   max-width: 60rem;
   margin: 3rem;
-  padding: 1rem;
+  padding: 2rem 0 0;
   background-color: white;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: 
-          "h3 h3"
-          "name name"
-          "mail mail"
-          "text text"
-          "text text"
-          "btn btn";
+  display: flex;
+  flex-direction: column;
   place-items: center;
-  gap: 1.5rem;
- 
-  h3{
-    grid-area: h3;
+
+  h3 {
     color: black;
-    place-self: center;
+    text-align: start;
+    font-size: 1.5rem;
+  }
+
+@media${device.tablet} {
+  flex-flow: row wrap;
+  place-items: flex-start;
+
+  h3 {
+    flex: 1 100%;
+    margin-left: 3rem;
+  }
+}
+`
+const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding-bottom: 3rem;
+
+  input, textarea {
+    outline: none;
+    border-radius: 5px;
+
+    :hover {
+      transform: scale(1.01);
+    }
+
+    :active, :focus {
+      border: 2px solid orange;
+    }
+  }
+
+  span {
+    color: black;
+    margin: 1rem 0 0;
     text-align: center;
   }
-  
-  input, textarea{
-    padding: .5rem;
-  }
-  
-`
 
+@media${device.tablet} {
+  width: 70%;
+  flex-flow: row wrap;
+  margin-left: 3rem;
+
+  span {
+    margin: 0 0 0 2rem;
+    font-size: 1.3rem;
+  }
+}
+`
 const TextArea = styled.textarea`
-  grid-area: text;
   width: 80%;
   max-width: 40rem;
-  height: 100%;
+  height: 10rem;
+  margin: 1rem 0;
+  padding: .5rem;
   overflow: hidden;
+  border: 1px solid black;
 
-@media${device.laptop} {
+@media${device.tablet} {
+  width: 100%;
+  border: 2px solid black;
 }
 `
 const Input = styled.input`
   width: 80%;
   max-width: 40rem;
+  margin: 1rem 0;
+  padding: .5rem;
+  border: 1px solid black;
+
+@media${device.tablet} {
+  width: 45%;
+  padding: 1rem;
+  border: 2px solid black;
 
   :first-of-type {
-    grid-area: name;
+    margin-right: auto;
+  }
+}
+`
+const ButtonEl = styled.button`
+  place-self: center;
+  margin: 1rem 0 .5rem;
+  padding: 1rem 2rem;
+  transition: all .4s;
+
+  border-radius: 8px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #1F3A60;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  text-transform: capitalize;
+
+  :hover, :focus {
+    background-color: #192e4d;
+    transform: scale(1.05);
   }
 
-  :nth-of-type(2) {
-    grid-area: mail;
+  :active {
+    transform: scale(1);
   }
-`
-const ButtonEl = styled(Button)`
-  grid-area: btn;
+
+@media${device.tablet} {
+  place-self: flex-start;
+  margin: 1rem 0;
+}
 `
 
 export const Contact = () => {
@@ -86,7 +152,7 @@ export const Contact = () => {
                     setMessage("Zrobione!");
             }
         } catch (err) {
-            setMessage('Coś poszło nie tak')
+            setMessage('Coś poszło nie tak');
         } finally {
             setLoading(false);
             setTimeout(() => {
@@ -97,15 +163,17 @@ export const Contact = () => {
 
     return (
         <Wrapper id="contact">
-            <Form onSubmit={handleSubmit}>
+            <Div>
                 <h3>Contact Me</h3>
-                <Input type="name" autoComplete="given-name" name="name" placeholder="Enter your name here..."/>
-                <Input type="email" name='email' placeholder='Enter your email here...'/>
-                <TextArea name='message' placeholder="Your message..."/>
-                <ButtonEl>Send</ButtonEl>
-                {loading && <p><Spinner/></p>}
-                {message && <p>{message}</p>}
-            </Form>
+                <Form onSubmit={handleSubmit}>
+                    <Input type="name" autoComplete="given-name" name="name" placeholder="Enter your name here..."/>
+                    <Input type="email" name='email' placeholder='Enter your email here...'/>
+                    <TextArea name='message' placeholder="Your message..."/>
+                    <ButtonEl>Send</ButtonEl>
+                    {loading && <span><Spinner/></span>}
+                    {message && <span>{message}</span>}
+                </Form>
+            </Div>
         </Wrapper>
     )
 }
