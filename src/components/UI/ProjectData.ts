@@ -56,7 +56,7 @@ export const ProjectData: Array<IProject> = [
         name: "Green-World",
         img: 'https://ik.imagekit.io/kacper/kacper-koduje/gw2_Jc1n6fn9H.png?updatedAt=1629347933273',
         alt: "Green-World homepage",
-        link: 'https://github.com/Kacper-Arendt/Green-World',
+        link: 'https://kacper-arendt.github.io/green-world/',
         description: `Green-World is a simple vegetable and fruit shop. The main reason I created this application was
          to learn about useReducer and useContext hooks. The app is still under development`,
         technologies: ['React', 'TypeScript', 'StyledComponents']
