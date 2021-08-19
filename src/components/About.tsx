@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {StyledWrapper} from "./UI/Wrapper";
 import {device} from "../Models/MediaQueries";
-import {me} from '../images/Images'
 
 const Div = styled(StyledWrapper)`
   margin: 5rem 0;
@@ -55,7 +54,7 @@ const Image = styled.div`
   grid-area: img;
   height: 100%;
   width: 100%;
-  background-image: url(${me});
+  background-image: url('https://ik.imagekit.io/kacper/kacper-koduje/me__7_MB3MYNw.jpg?updatedAt=1629351836513');
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
