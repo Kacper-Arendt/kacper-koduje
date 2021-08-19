@@ -11,6 +11,7 @@ interface IProps {
 
 const Wrapper = styled(StyledWrapper)`
   background-color: #fff;
+  min-height: 68rem;
 `
 
 const ProjectContainer = styled.div<IProps>`
@@ -150,10 +151,10 @@ export const Button = styled.a`
 `
 
 export const Projects = () => {
-    const [currentProject, setCurrentProject] = useState(0);
+    const [currentProject, setCurrentProject] = useState(4);
 
     const nextProjectHandler = () => {
-        if (currentProject < 3) {
+        if (currentProject < ProjectData.length - 1) {
             setCurrentProject(currentProject + 1);
         } else {
             setCurrentProject(0);
@@ -163,7 +164,7 @@ export const Projects = () => {
         if (currentProject > 0) {
             setCurrentProject(currentProject - 1);
         } else {
-            setCurrentProject(3);
+            setCurrentProject(4);
         }
     }
 

@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {sendForm} from 'emailjs-com';
-import {Spinner} from "./UI/Spinner";
-import {StyledWrapper} from "./UI/Wrapper";
-import {device} from "../Models/MediaQueries";
+import {Spinner} from "../UI/Spinner";
+import {StyledWrapper} from "../UI/Wrapper";
+import {device} from "../../Models/MediaQueries";
+import {AndThisIsJustBeginning} from "./AndThisIsJustBeginning";
 
 const Wrapper = styled(StyledWrapper)`
+    margin: 3rem 0;
 `
 
 const Div = styled.div`
@@ -161,6 +163,7 @@ export const Contact = () => {
 
     return (
         <Wrapper id="contact">
+            <AndThisIsJustBeginning />
             <Div>
                 <h3>Contact Me</h3>
                 <Form onSubmit={handleSubmit}>

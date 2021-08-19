@@ -1,5 +1,5 @@
 import styled, {keyframes} from "styled-components";
-import {logo, bikepacking} from '../images/Images'
+import {logo} from '../images/Images'
 import {StyledWrapper} from "./UI/Wrapper";
 import {device} from "../Models/MediaQueries";
 
@@ -28,7 +28,8 @@ const rotate = keyframes`
 const StyledHeader = styled(StyledWrapper)`
   height: 90vh;
   justify-content: center;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(77, 77, 77, .3)), url(${bikepacking});
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(77, 77, 77, .3)),
+  url('https://ik.imagekit.io/kacper/kacper-koduje/marek-piwnicki-bikepacking_-h4Yk9rgW.jpg?updatedAt=1629351836513');
 
 @media${device.tablet} {
   margin-top: 5rem;
