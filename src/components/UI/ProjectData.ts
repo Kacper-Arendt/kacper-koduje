@@ -58,7 +58,7 @@ export const ProjectData: Array<IProject> = [
         alt: "Green-World homepage",
         link: 'https://kacper-arendt.github.io/green-world/',
         description: `Green-World is a simple vegetable and fruit shop. The main reason I created this application was
-         to learn about useReducer and useContext hooks. The app is still under development`,
+         to learn about useReducer and useContext hooks.`,
         technologies: ['React', 'TypeScript', 'StyledComponents']
     }
 ]

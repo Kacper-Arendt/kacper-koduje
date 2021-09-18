@@ -1,7 +1,7 @@
 import logo from './logo.svg';
-import icons from './iconsCollection.svg';
+import svgIcons from './svgCollections.svg';
 
 export {
-    icons,
     logo,
+    svgIcons
 };
