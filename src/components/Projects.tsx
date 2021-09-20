@@ -53,6 +53,7 @@ const ProjectContainer = styled.div<IProps>`
     width: 100%;
     height: 100%;
     max-width: 25rem;
+    max-height: 35rem;
   }
 
   svg {
@@ -92,6 +93,7 @@ const ProjectContainer = styled.div<IProps>`
 
   img {
     border-bottom-left-radius: 1rem;
+    max-height: 30rem;
   }
 
   h2 {
@@ -151,7 +153,7 @@ export const Button = styled.a`
 `
 
 export const Projects = () => {
-    const [currentProject, setCurrentProject] = useState(4);
+    const [currentProject, setCurrentProject] = useState(5);
 
     const nextProjectHandler = () => {
         if (currentProject < ProjectData.length - 1) {
@@ -164,7 +166,7 @@ export const Projects = () => {
         if (currentProject > 0) {
             setCurrentProject(currentProject - 1);
         } else {
-            setCurrentProject(4);
+            setCurrentProject(5);
         }
     }
 
