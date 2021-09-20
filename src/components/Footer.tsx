@@ -72,7 +72,7 @@ export const Footer = () => {
             </Contact>
             <Social>
                 <p>Find Me</p>
-                <a href="https://github.com/kacykvaa" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/kacper-arendt" target="_blank" rel="noopener noreferrer">
                     Github
                 </a>
                 <a href="https://www.linkedin.com/in/kacper-arendt/" target="_blank" rel="noopener noreferrer">

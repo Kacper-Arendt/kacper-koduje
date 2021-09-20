@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import {icons} from '../images/Images';
+import {svgIcons} from '../images/Images';
 import {device} from "../Models/MediaQueries";
 import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
   margin: 3rem 0;
-
 `
 
 const Div = styled.div`
@@ -37,6 +36,7 @@ const IconContainer = styled.div`
   justify-content: center;
   width: 30%;
   align-items: center;
+
   :hover {
     color: orange;
   }
@@ -77,45 +77,51 @@ export const Skills = () => {
                 <h3>Technologies that I use</h3>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#javascript'}/>
+                        <use href={svgIcons + '#javascript'}/>
                     </svg>
                     <p>JavaScript</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#typescript'}/>
+                        <use href={svgIcons + '#typescript'}/>
                     </svg>
                     <p>TypeScript</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#react'}/>
+                        <use href={svgIcons + '#react'}/>
                     </svg>
                     <p>React</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#css'}/>
+                        <use href={svgIcons + '#css'}/>
                     </svg>
                     <p>CSS</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#html-5'}/>
+                        <use href={svgIcons + '#html-5'}/>
                     </svg>
                     <p>HTML</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#github'}/>
+                        <use href={svgIcons + '#github'}/>
                     </svg>
                     <p>Github</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#nodejs'}/>
+                        <use href={svgIcons + '#nodejs'}/>
                     </svg>
                     <p>Node</p>
+                </IconContainer>
+                <IconContainer>
+                    <svg>
+                        <use href={svgIcons + '#material'}/>
+                    </svg>
+                    <p>Material-UI</p>
                 </IconContainer>
             </Div>
 
@@ -123,25 +129,25 @@ export const Skills = () => {
                 <h3>Technologies that I learned</h3>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#php'}/>
+                        <use href={svgIcons + '#php'}/>
                     </svg>
                     <p>Php</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#docker'}/>
+                        <use href={svgIcons + '#docker'}/>
                     </svg>
                     <p>Docker</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#mysql'}/>
+                        <use href={svgIcons + '#mysql'}/>
                     </svg>
                     <p>MySQL</p>
                 </IconContainer>
                 <IconContainer>
                     <svg>
-                        <use href={icons + '#composer'}/>
+                        <use href={svgIcons + '#composer'}/>
                     </svg>
                     <p>Composer</p>
                 </IconContainer>

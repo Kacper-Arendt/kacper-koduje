@@ -1,4 +1,3 @@
-
 interface IProject {
     id: number,
     name: string,
@@ -18,7 +17,7 @@ export const ProjectData: Array<IProject> = [
         link: "https://kacper-arendt.github.io/quiz-lab/",
         description: `An application that allows users to test their knowledge of the frontend. The user can play 
         without registration. I used the Firebase platform to create the database and authorize users.`,
-        technologies: ['TypeScript', 'React', 'Redux', 'StyledComponents']
+        technologies: ['TypeScript', 'React', 'Redux', 'StyledComponents', 'Firebase']
     },
     {
         id: 1,
@@ -58,7 +57,18 @@ export const ProjectData: Array<IProject> = [
         alt: "Green-World homepage",
         link: 'https://kacper-arendt.github.io/green-world/',
         description: `Green-World is a simple vegetable and fruit shop. The main reason I created this application was
-         to learn about useReducer and useContext hooks. The app is still under development`,
+         to learn about useReducer and useContext hooks.`,
         technologies: ['React', 'TypeScript', 'StyledComponents']
+    },
+    {
+        id: 5,
+        name: "My-GeaR",
+        img: 'https://ik.imagekit.io/kacper/kacper-koduje/gear6_dEItY8d10UE.png?updatedAt=1632122426175',
+        alt: "My-gear homepage",
+        link: 'https://my-gear-d05d1.web.app/',
+        description: `The user can add components that have been replaced on his bikes.. In the future,
+         it will be possible to connect the account with strava, so that the application will remind about upcoming 
+         services based on kilometers traveled. My-Gear is still under development`,
+        technologies: ['React', 'TypeScript', 'Redux', 'StyledComponents', 'Chakra UI', 'Firebase']
     }
 ]
