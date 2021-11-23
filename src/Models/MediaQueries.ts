@@ -1,5 +1,6 @@
 const size = {
-    mobileS: '320px',
+    mobileX: '320px',
+    mobileS: '400px',
     mobileM: '500px',
     tablet: '720px',
     laptop: '1020px',
@@ -8,6 +9,7 @@ const size = {
 };
 
 export const device: typeof size = {
+    mobileX: `(min-width: ${size.mobileX})`,
     mobileS: `(min-width: ${size.mobileS})`,
     mobileM: `(min-width: ${size.mobileM})`,
     tablet: `(min-width: ${size.tablet})`,

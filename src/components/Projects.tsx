@@ -11,13 +11,20 @@ interface IProps {
 
 const Wrapper = styled(StyledWrapper)`
   background-color: #fff;
-  min-height: 68rem;
+  min-height: 66rem;
+
+  font-size: 1.2rem;
 `
 
 const ProjectContainer = styled.div<IProps>`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, min-content);
+  grid-template-columns: 1fr 75% 1fr;
+  grid-template-rows: 
+          repeat(2, min-content)
+          minmax(min-content, 12rem) 
+          26rem 
+          minmax(min-content, 14.5rem)
+          min-content;
   grid-template-areas: 
           ". h2 ."
           ".  nm  ."
@@ -26,15 +33,16 @@ const ProjectContainer = styled.div<IProps>`
           ".  ul  ."
           " .  btn  .";
   gap: 1rem;
+  justify-items: center;
+  
   margin: 3rem 0;
-  width: 90%;
   max-width: 100rem;
   color: black;
-  justify-items: center;
   text-align: center;
 
   h2 {
     grid-area: h2;
+    text-align: left;
   }
 
   h3 {
@@ -43,6 +51,8 @@ const ProjectContainer = styled.div<IProps>`
 
   p {
     grid-area: ab;
+    max-width: 30rem;
+
     letter-spacing: 1.7px;
     line-height: 1.5;
     overflow: hidden;
@@ -53,7 +63,6 @@ const ProjectContainer = styled.div<IProps>`
     width: 100%;
     height: 100%;
     max-width: 25rem;
-    max-height: 35rem;
   }
 
   svg {
@@ -72,54 +81,67 @@ const ProjectContainer = styled.div<IProps>`
       :first-of-type, :last-of-type {
         color: orange;
       }
-
-      :active {
-        :first-of-type, :last-of-type {
-        }
-      }
     }
   }
 
-@media${device.laptop} {
+@media${device.mobileS} {
+  grid-template-rows: 
+          repeat(2, min-content)
+          minmax(min-content, 11rem) 
+          30rem 
+          minmax(min-content, 12.5rem)
+          min-content;
+
+  img {
+    max-width: 30rem;
+  }
+
+} @media${device.tablet} {
   text-align: left;
   grid-template-columns: repeat(6, 1fr);
+  grid-template-rows:
+          min-content
+          min-content
+  repeat(3, 10rem)
+  5rem          
+  min-content;
   grid-template-areas:
           "h2 h2 . . . ."
-          ". nm . img img ."
+          " . nm  . . . ."
+          ". ab ab img img ."
           ". ab ab img img . "
           ". ul . img img . "
           " . ul . . btn . "
           "larr . . .  . rarr";
-
   img {
     border-bottom-left-radius: 1rem;
-    max-height: 30rem;
   }
 
   h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     font-size: 3rem;
   }
 
   h3 {
     place-self: start;
+    font-size: 1.5rem;
   }
 
   p {
     place-self: start;
-    width: 70%;
+    width: 80%;
+    font-size: 1.1em;
   }
 }
 `
 const Technologies = styled.ul`
   grid-area: ul;
-  font-size: 1.5rem;
+  font-size: 1.2em;
   text-align: left;
 
   li {
     margin: .3rem;
-    flex: 1 30%;
     list-style: none;
     white-space: nowrap;
   }
@@ -132,23 +154,23 @@ const Technologies = styled.ul`
 `
 export const Button = styled.a`
   grid-area: btn;
+  align-self: start;
+  padding: 1.5rem 1rem;
+
+  transition: all .4s;
   background-color: #1F3A60;
   color: white;
+  
   cursor: pointer;
-  padding: 1rem;
   text-decoration: none;
-  transition: all .4s;
   font-weight: bold;
   text-transform: capitalize;
+  white-space: nowrap;
 
   :hover {
     background-color: white;
     color: black;
     outline: 2px solid black;
-  }
-
-  &:active {
-    letter-spacing: 2px;
   }
 `
 
