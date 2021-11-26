@@ -11,38 +11,35 @@ interface IProps {
 
 const Wrapper = styled(StyledWrapper)`
   background-color: #fff;
-  min-height: 66rem;
-
-  font-size: 1.2rem;
-`
+  min-height: 62rem;
+  justify-content: center;
+`;
 
 const ProjectContainer = styled.div<IProps>`
   display: grid;
   grid-template-columns: 1fr 75% 1fr;
   grid-template-rows: 
           repeat(2, min-content)
-          minmax(min-content, 12rem) 
-          26rem 
-          minmax(min-content, 14.5rem)
+          minmax(min-content, 9rem)
+          min-content
+          minmax(min-content, 12.5rem)
           min-content;
   grid-template-areas: 
           ". h2 ."
           ".  nm  ."
           " . ab ."
           "larr img rarr"
-          ".  ul  ."
+          ". ul ."
           " .  btn  .";
-  gap: 1rem;
+  row-gap: 1rem;
   justify-items: center;
-  
-  margin: 3rem 0;
+
   max-width: 100rem;
   color: black;
   text-align: center;
 
   h2 {
     grid-area: h2;
-    text-align: left;
   }
 
   h3 {
@@ -51,93 +48,78 @@ const ProjectContainer = styled.div<IProps>`
 
   p {
     grid-area: ab;
-    max-width: 30rem;
-
-    letter-spacing: 1.7px;
     line-height: 1.5;
-    overflow: hidden;
   }
 
   img {
     grid-area: img;
-    width: 100%;
-    height: 100%;
+    height: 20rem;
     max-width: 25rem;
   }
 
   svg {
     font-size: 3rem;
-    color: rgba(0, 0, 0, 1);
+    color: black;
 
     :first-of-type {
       grid-area: larr;
-    }
+      align-self: center;
+    };
 
     :last-of-type {
       grid-area: rarr;
-    }
+      align-self: center;
+    };
 
     :hover {
       :first-of-type, :last-of-type {
         color: orange;
       }
-    }
+    };
   }
-
-@media${device.mobileS} {
-  grid-template-rows: 
-          repeat(2, min-content)
-          minmax(min-content, 11rem) 
-          30rem 
-          minmax(min-content, 12.5rem)
-          min-content;
-
-  img {
-    max-width: 30rem;
+  @media${device.mobileM}{
+  img{
+    height: 25rem;
+    max-width: 25rem;
   }
-
-} @media${device.tablet} {
-  text-align: left;
+}
+  
+@media${device.tablet} {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows:
           min-content
           min-content
-  repeat(3, 10rem)
-  5rem          
+  repeat(2, 15rem)
   min-content;
   grid-template-areas:
-          "h2 h2 . . . ."
-          " . nm  . . . ."
+          ". h2 . . . ."
+          " . nm  nm . . ."
           ". ab ab img img ."
-          ". ab ab img img . "
-          ". ul . img img . "
-          " . ul . . btn . "
-          "larr . . .  . rarr";
+          ". ul ul img img . "
+          ". . . . . ."
+          " larr . . . btn rarr ";
+  text-align: left;
+  column-gap: 2rem;
+
   img {
     border-bottom-left-radius: 1rem;
-  }
-
-  h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 3rem;
+    height: 30rem;
+    justify-self: end ;
   }
 
   h3 {
     place-self: start;
-    font-size: 1.5rem;
   }
 
   p {
     place-self: start;
     width: 80%;
-    font-size: 1.1em;
   }
 }
-`
+`;
 const Technologies = styled.ul`
   grid-area: ul;
-  font-size: 1.2em;
+  justify-self: start;
   text-align: left;
 
   li {
@@ -151,16 +133,20 @@ const Technologies = styled.ul`
     font-size: 1em;
   }
 
-`
+@media${device.tablet} {
+  align-self: end;
+}
+`;
+
 export const Button = styled.a`
   grid-area: btn;
   align-self: start;
-  padding: 1.5rem 1rem;
+  padding: 1.2rem;
 
   transition: all .4s;
   background-color: #1F3A60;
   color: white;
-  
+
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
@@ -172,7 +158,11 @@ export const Button = styled.a`
     color: black;
     outline: 2px solid black;
   }
-`
+  
+  @media${device.tablet}{
+  justify-self: end;
+}
+`;
 
 export const Projects = () => {
     const [currentProject, setCurrentProject] = useState(5);
