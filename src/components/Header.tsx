@@ -23,7 +23,7 @@ const rotate = keyframes`
   100% {
     transform: rotate(360deg);
   }
-`
+`;
 
 const StyledHeader = styled(StyledWrapper)`
   height: 90vh;
@@ -34,7 +34,7 @@ const StyledHeader = styled(StyledWrapper)`
 @media${device.tablet} {
   margin-top: 5rem;
 }
-`
+`;
 
 const LogoContainer = styled.div`
   width: 20rem;
@@ -70,7 +70,8 @@ const LogoContainer = styled.div`
     top: 2%;
     left: 2%;
   }
-`
+`;
+
 const H1 = styled.h1`
   font-size: 6rem;
   color: white;
@@ -88,8 +89,7 @@ const H1 = styled.h1`
       color: #e0ba22;
     }
   }
-`
-
+`;
 
 export const Header = () => {
     return (

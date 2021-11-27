@@ -25,9 +25,8 @@ export const ProjectData: Array<IProject> = [
         img: 'https://ik.imagekit.io/kacper/kacper-koduje/weatherState_XBtgeOvOL.png?updatedAt=1629348365265',
         alt: "Weather state page",
         link: "https://kacper-arendt.github.io/Weather-State/",
-        description: `The application allows users to check the weather anywhere on earth. In the city menu, user can
-         add a city to the favorites list. All favorite cities are loaded automatically. Weather data comes from 
-         OpenWeatherMap.`,
+        description: `The application allows users to check the weather anywhere on earth. All favorite cities are
+         loaded automatically. Weather data comes from OpenWeatherMap.`,
         technologies: ['TypeScript', 'React', 'Redux', 'StyledComponents']
     },
     {
@@ -47,7 +46,7 @@ export const ProjectData: Array<IProject> = [
         alt: "Orlik page",
         link: 'https://github.com/Kacper-Arendt/OrlikApi-Front-',
         description: `Orlik is an application that will allow users to add or reserve a pitch. When creating this 
-        application, I took my first steps in Php. Orlik was created in JS and PHP. This is my first independent project.`,
+        application, I took my first steps in Php. Orlik was created in JS and PHP. This is my first project.`,
         technologies: ['React', 'Symfony', 'MySQL', 'CSS Modules']
     },
     {
@@ -66,9 +65,9 @@ export const ProjectData: Array<IProject> = [
         img: 'https://ik.imagekit.io/kacper/kacper-koduje/gear6_dEItY8d10UE.png?updatedAt=1632122426175',
         alt: "My-gear homepage",
         link: 'https://my-gear-d05d1.web.app/',
-        description: `The user can add components that have been replaced on his bikes.. In the future,
+        description: `User can add components that have been replaced on his bikes. In the future,
          it will be possible to connect the account with strava, so that the application will remind about upcoming 
-         services based on kilometers traveled. My-Gear is still under development`,
+         services based on kilometers traveled.`,
         technologies: ['React', 'TypeScript', 'Redux', 'StyledComponents', 'Chakra UI', 'Firebase']
     }
 ]

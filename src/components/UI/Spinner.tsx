@@ -43,14 +43,14 @@ const Span = styled.div`
       transform: scale(1.0);
     }
   }
-
-`
+`;
 
 export const Spinner = (): JSX.Element => {
     return (
-        <Span className="spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-        </Span>);
+        <Span>
+            <div/>
+            <div/>
+            <div/>
+        </Span>
+    );
 }

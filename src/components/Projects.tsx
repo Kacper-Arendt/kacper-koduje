@@ -11,26 +11,31 @@ interface IProps {
 
 const Wrapper = styled(StyledWrapper)`
   background-color: #fff;
-  min-height: 68rem;
-`
+  min-height: 62rem;
+  justify-content: center;
+`;
 
 const ProjectContainer = styled.div<IProps>`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, min-content);
+  grid-template-columns: 1fr 75% 1fr;
+  grid-template-rows: 
+          repeat(2, min-content)
+          minmax(min-content, 9rem)
+          min-content
+          minmax(min-content, 12.5rem)
+          min-content;
   grid-template-areas: 
           ". h2 ."
           ".  nm  ."
           " . ab ."
           "larr img rarr"
-          ".  ul  ."
+          ". ul ."
           " .  btn  .";
-  gap: 1rem;
-  margin: 3rem 0;
-  width: 90%;
+  row-gap: 1rem;
+  justify-items: center;
+
   max-width: 100rem;
   color: black;
-  justify-items: center;
   text-align: center;
 
   h2 {
@@ -43,63 +48,63 @@ const ProjectContainer = styled.div<IProps>`
 
   p {
     grid-area: ab;
-    letter-spacing: 1.7px;
     line-height: 1.5;
-    overflow: hidden;
   }
 
   img {
     grid-area: img;
-    width: 100%;
-    height: 100%;
+    height: 20rem;
     max-width: 25rem;
-    max-height: 35rem;
   }
 
   svg {
     font-size: 3rem;
-    color: rgba(0, 0, 0, 1);
+    color: black;
 
     :first-of-type {
       grid-area: larr;
-    }
+      align-self: center;
+    };
 
     :last-of-type {
       grid-area: rarr;
-    }
+      align-self: center;
+    };
 
     :hover {
       :first-of-type, :last-of-type {
         color: orange;
       }
-
-      :active {
-        :first-of-type, :last-of-type {
-        }
-      }
-    }
+    };
   }
-
-@media${device.laptop} {
-  text-align: left;
+  @media${device.mobileM}{
+  img{
+    height: 25rem;
+    max-width: 25rem;
+  }
+}
+  
+@media${device.tablet} {
   grid-template-columns: repeat(6, 1fr);
+  grid-template-rows:
+          min-content
+          min-content
+  repeat(2, 15rem)
+  min-content;
   grid-template-areas:
-          "h2 h2 . . . ."
-          ". nm . img img ."
-          ". ab ab img img . "
-          ". ul . img img . "
-          " . ul . . btn . "
-          "larr . . .  . rarr";
+          ". h2 . . . ."
+          " . nm  nm . . ."
+          ". ab ab img img ."
+          ". ul ul img img . "
+          ". . . . . ."
+          " larr . . . btn rarr ";
+  text-align: left;
+  column-gap: 2rem;
 
   img {
     border-bottom-left-radius: 1rem;
-    max-height: 30rem;
-  }
-
-  h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 3rem;
+    height: 30rem;
+    justify-self: end ;
   }
 
   h3 {
@@ -108,18 +113,17 @@ const ProjectContainer = styled.div<IProps>`
 
   p {
     place-self: start;
-    width: 70%;
+    width: 80%;
   }
 }
-`
+`;
 const Technologies = styled.ul`
   grid-area: ul;
-  font-size: 1.5rem;
+  justify-self: start;
   text-align: left;
 
   li {
     margin: .3rem;
-    flex: 1 30%;
     list-style: none;
     white-space: nowrap;
   }
@@ -129,28 +133,36 @@ const Technologies = styled.ul`
     font-size: 1em;
   }
 
-`
+@media${device.tablet} {
+  align-self: end;
+}
+`;
+
 export const Button = styled.a`
   grid-area: btn;
+  align-self: start;
+  padding: 1.2rem;
+
+  transition: all .4s;
   background-color: #1F3A60;
   color: white;
+
   cursor: pointer;
-  padding: 1rem;
   text-decoration: none;
-  transition: all .4s;
   font-weight: bold;
   text-transform: capitalize;
+  white-space: nowrap;
 
   :hover {
     background-color: white;
     color: black;
     outline: 2px solid black;
   }
-
-  &:active {
-    letter-spacing: 2px;
-  }
-`
+  
+  @media${device.tablet}{
+  justify-self: end;
+}
+`;
 
 export const Projects = () => {
     const [currentProject, setCurrentProject] = useState(5);
