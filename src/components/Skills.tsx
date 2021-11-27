@@ -5,15 +5,16 @@ import {StyledWrapper} from "./UI/Wrapper";
 
 const Wrapper = styled(StyledWrapper)`
   margin: 3rem 0;
-`
+`;
 
 const Div = styled.div`
-  margin: 1rem 0;
-  width: 80%;
-  max-width: 110rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
+  width: 80%;
+  max-width: 110rem;
+  margin: 1rem 0;
   background-color: white;
 
 
@@ -27,15 +28,16 @@ const Div = styled.div`
       margin-top: .5rem;
     }
   }
-`
+`;
 
 const IconContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  width: 30%;
   align-items: center;
+  
+  width: 30%;
 
   :hover {
     color: orange;
@@ -68,7 +70,7 @@ const IconContainer = styled.div`
   width: 25%;
   margin: 3rem 0;
 }
-`
+`;
 
 export const Skills = () => {
     return (

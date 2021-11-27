@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
-
 import {About, Skills, Contact, Footer, Header, Projects, Menu} from "./components/Componets";
 import {device} from './Models/MediaQueries';
 
@@ -50,7 +49,7 @@ export function App() {
                 <Header/>
                 <About/>
                 <Skills/>
-                {<Projects/>}
+                <Projects/>
                 <Contact/>
                 <Footer/>
             </Wrapper>

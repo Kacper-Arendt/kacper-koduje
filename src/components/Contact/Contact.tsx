@@ -7,103 +7,85 @@ import {device} from "../../Models/MediaQueries";
 import {AndThisIsJustBeginning} from "./AndThisIsJustBeginning";
 
 const Wrapper = styled(StyledWrapper)`
-    margin: 3rem 0;
-`
+  margin: 3rem 0;
+`;
 
-const Div = styled.div`
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+
   width: 80%;
   max-width: 60rem;
   margin: 3rem;
-  padding: 2rem 0 0;
+  padding: 2rem;
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-
-  h3 {
-    color: black;
-    text-align: start;
-    font-size: 1.5rem;
-  }
-
-@media${device.tablet} {
-  flex-flow: row wrap;
-  place-items: flex-start;
-
-  h3 {
-    flex: 1 100%;
-    margin-left: 3rem;
-  }
-}
-`
-const Form = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
 
   input, textarea {
     outline: none;
     border-radius: 5px;
-
-    :hover {
-      transform: scale(1.01);
-    }
+    margin: 1rem 0;
+    padding: .5rem;
+    border: 1px solid black;
 
     :active, :focus {
-      border: 2px solid orange;
+      border: 1px solid orange;
     }
+  }
+
+  h3 {
+    flex: 1 100%;
+    margin: 0;
+    text-align: start;
+    font-size: 1.5rem;
+    color: black;
   }
 
   span {
-    color: black;
     margin: 1rem 0 0;
     text-align: center;
+    color: black;
   }
 
 @media${device.tablet} {
-  width: 70%;
   flex-flow: row wrap;
-  margin-left: 3rem;
+
+  h3 {
+    flex: 1 100%;
+    align-self: start;
+  }
 
   span {
     margin: 0 0 0 2rem;
     font-size: 1.3rem;
   }
 }
-`
+`;
+
 const TextArea = styled.textarea`
   width: 80%;
   height: 10rem;
-  margin: 1rem 0;
-  padding: .5rem;
-  overflow: hidden;
-  border: 1px solid black;
 
 @media${device.tablet} {
   width: 100%;
   border: 2px solid black;
 }
-`
+`;
+
 const Input = styled.input`
+  flex: 1 45%;
   width: 80%;
   max-width: 40rem;
-  margin: 1rem 0;
-  padding: .5rem;
-  border: 1px solid black;
 
 @media${device.tablet} {
-  width: 45%;
   padding: 1rem .5rem;
   border: 2px solid black;
-
-  :first-of-type {
-    margin-right: auto;
-  }
 }
-`
+`;
+
 const ButtonEl = styled.button`
-  place-self: center;
   margin: 1rem 0 .5rem;
   padding: 1rem 2rem;
   transition: all .4s;
@@ -129,18 +111,17 @@ const ButtonEl = styled.button`
   }
 
 @media${device.tablet} {
-  place-self: flex-start;
   margin: 1rem 0;
 }
-`
+`;
 
 export const Contact = () => {
     const [message, setMessage] = useState<string | null>();
     const [loading, setLoading] = useState(false);
 
-    const templateId = process.env["REACT_APP_TEMPLATE_ID"];
-    const userID = process.env["REACT_APP_USER_ID"];
-    const serviceID = process.env["REACT_APP_SERVICE_ID"];
+    const templateId = 'template_zz2fjrh';
+    const userID = 'user_7j4VonaUyBW8EtEvHomeP';
+    const serviceID = 'service_jlnr2zb';
 
     const handleSubmit = async (e: any): Promise<void> => {
         e.preventDefault();
@@ -163,18 +144,17 @@ export const Contact = () => {
 
     return (
         <Wrapper id="contact">
-            <AndThisIsJustBeginning />
-            <Div>
+            <AndThisIsJustBeginning/>
+            <Form onSubmit={handleSubmit}>
                 <h3>Contact Me</h3>
-                <Form onSubmit={handleSubmit}>
-                    <Input type="name" autoComplete="given-name" name="name" placeholder="Enter your name here..."/>
-                    <Input type="email" name='email' placeholder='Enter your email here...'/>
-                    <TextArea name='message' placeholder="Your message..."/>
-                    <ButtonEl>Send</ButtonEl>
-                    {loading && <span><Spinner/></span>}
-                    {message && <span>{message}</span>}
-                </Form>
-            </Div>
+                <Input type="name" autoComplete="given-name" name="name" placeholder="Enter your name here..."
+                       required/>
+                <Input type="email" name='email' placeholder='Enter your email here...' required/>
+                <TextArea name='message' placeholder="Your message..." required/>
+                <ButtonEl type='submit'>Send</ButtonEl>
+                {loading && <span><Spinner/></span>}
+                {message && <span>{message}</span>}
+            </Form>
         </Wrapper>
     )
 }

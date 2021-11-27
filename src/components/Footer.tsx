@@ -6,6 +6,7 @@ const StyledFooter = styled.footer`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
+  
   margin-top: auto;
   padding: 2.5rem;
   background-color: #1F3A60;
@@ -17,8 +18,8 @@ const StyledFooter = styled.footer`
   }
 
 @media${device.tablet} {
-  font-size: 1.3rem;
   padding: 2.5rem 3.5rem;
+  font-size: 1.3rem;
 }
 `
 
