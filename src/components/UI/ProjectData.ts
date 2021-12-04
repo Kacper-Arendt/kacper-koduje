@@ -69,5 +69,15 @@ export const ProjectData: Array<IProject> = [
          it will be possible to connect the account with strava, so that the application will remind about upcoming 
          services based on kilometers traveled.`,
         technologies: ['React', 'TypeScript', 'Redux', 'StyledComponents', 'Chakra UI', 'Firebase']
+    },
+    {
+        id: 6,
+        name: 'Multi Step Form',
+        img: 'https://ik.imagekit.io/kacper/kacper-koduje/Screenshot_2021-12-04_at_12.11.07_dOi9Hm9Gk.png?updatedAt=1638616293102',
+        alt: 'Multi Step Form starting page',
+        link: 'https://kacper-arendt.github.io/multi-step-form/',
+        description: `I created this app to practice multi step form handling. User can choose side, then type his data
+            and select planet. I used Swapi for fetch planet names`,
+        technologies: ['React', 'TypeScript', 'StyledComponents'],
     }
 ]
