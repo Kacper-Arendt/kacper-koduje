@@ -39,18 +39,18 @@ export const ProjectData: Array<IProject> = [
         project I've ever written in TypeScript.`,
         technologies: ['TypeScript', 'React', 'Redux', 'StyledComponents']
     },
+    // {
+    //     id: 3,
+    //     name: "Orlik",
+    //     img: 'https://ik.imagekit.io/kacper/kacper-koduje/orlik_pqXT4wfpZD.png?updatedAt=1629348469867',
+    //     alt: "Orlik page",
+    //     link: 'https://github.com/Kacper-Arendt/OrlikApi-Front-',
+    //     description: `Orlik is an application that will allow users to add or reserve a pitch. When creating this
+    //     application, I took my first steps in Php. Orlik was created in JS and PHP. This is my first project.`,
+    //     technologies: ['React', 'Symfony', 'MySQL', 'CSS Modules']
+    // },
     {
         id: 3,
-        name: "Orlik",
-        img: 'https://ik.imagekit.io/kacper/kacper-koduje/orlik_pqXT4wfpZD.png?updatedAt=1629348469867',
-        alt: "Orlik page",
-        link: 'https://github.com/Kacper-Arendt/OrlikApi-Front-',
-        description: `Orlik is an application that will allow users to add or reserve a pitch. When creating this 
-        application, I took my first steps in Php. Orlik was created in JS and PHP. This is my first project.`,
-        technologies: ['React', 'Symfony', 'MySQL', 'CSS Modules']
-    },
-    {
-        id: 4,
         name: "Green-World",
         img: 'https://ik.imagekit.io/kacper/kacper-koduje/gw2_Jc1n6fn9H.png?updatedAt=1629347933273',
         alt: "Green-World homepage",
@@ -60,7 +60,7 @@ export const ProjectData: Array<IProject> = [
         technologies: ['React', 'TypeScript', 'StyledComponents']
     },
     {
-        id: 5,
+        id: 4,
         name: "My-GeaR",
         img: 'https://ik.imagekit.io/kacper/kacper-koduje/gear6_dEItY8d10UE.png?updatedAt=1632122426175',
         alt: "My-gear homepage",
@@ -71,7 +71,7 @@ export const ProjectData: Array<IProject> = [
         technologies: ['React', 'TypeScript', 'Redux', 'StyledComponents', 'Chakra UI', 'Firebase']
     },
     {
-        id: 6,
+        id: 5,
         name: 'Multi Step Form',
         img: 'https://ik.imagekit.io/kacper/kacper-koduje/Screenshot_2021-12-04_at_12.11.07_dOi9Hm9Gk.png?updatedAt=1638616293102',
         alt: 'Multi Step Form starting page',
